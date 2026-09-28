@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Head in the Clouds — Dominic Park</title>
+  <meta name="description" content="A research-led rebrand of 88rising's Head in the Clouds festival: identity, website information architecture, accessibility, and merch.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=10">
+  <style>
+    .swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; list-style: none; margin: 0; padding: 0; }
+    .swatch { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--rule); font-size: 12.5px; }
+    .swatch i { display: block; aspect-ratio: 1 / .8; }
+    .swatch div { padding: 10px; }
+    .swatch b { display: block; font-weight: 500; font-size: 13px; }
+    .swatch span { color: var(--ink-3); }
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .compare > div { border-radius: var(--radius); padding: 22px; font-size: 15px; }
+    .compare small { display: block; font-size: 12px; margin-top: 10px; }
+    @media (max-width: 640px) { .swatches { grid-template-columns: repeat(2, 1fr); } .compare { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="link" href="../index.html">Dominic Park</a>
+      <p class="site-header__center">[Brand Identity, Web UI, Information Architecture]</p>
+      <nav class="site-header__right" aria-label="Page">
+        <a class="link" href="../index.html"><span class="arrow arrow--l" aria-hidden="true">←</span> Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="cs-hero">
+      <h1 class="cs-hero__title reveal">Head in the Clouds</h1>
+      <p class="cs-hero__lede reveal">A rebrand of 88rising’s music festival that starts with what fans go through before and after the music.</p>
+      <figure class="cs-hero__media reveal"><img class="cover" src="../assets/live/hitc-1.webp" alt="Crowd walking toward a festival entrance arch hung with the pastel Head in the Clouds banner: Brookside at the Rose Bowl, August 8, 2026"></figure>
+    </section>
+
+    <dl class="facts reveal">
+      <div><dt>Role</dt><dd>Research, identity, web UI, merch</dd></div>
+      <div><dt>Duration</dt><dd>2 weeks</dd></div>
+      <div><dt>Team</dt><dd>Solo, self-initiated</dd></div>
+      <div><dt>Tools</dt><dd>Figma, Cinema 4D, Illustrator, Photoshop</dd></div>
+    </dl>
+
+    <nav class="toc" aria-label="On this page"><div class="toc__inner">
+      <a class="link" href="#research">Research</a>
+      <a class="link" href="#pain">User pain points</a>
+      <a class="link" href="#site">The website</a>
+      <a class="link" href="#access">Legibility</a>
+      <a class="link" href="#identity">Identity &amp; merch</a>
+      <a class="link" href="#takeaway">Takeaway</a>
+    </div>
+    </nav>
+
+    <section class="chapter" id="research" aria-labelledby="h-research">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>01</span> Research</p>
+        <h2 id="h-research">Not a festival with Asian artists. A community that happens to have a stage.</h2>
+        <p>I read two years of festival coverage, attendee reviews, and Reddit threads before drawing anything. The crowd is Gen Z and young millennials, many from the Asian diaspora but far from only; K-pop fans, 88rising loyalists, R&amp;B listeners, and people who came for the outfits and the food. Almost every positive account returned to the same word: <strong>community.</strong></p>
+        <p>One sentence became my brief: <strong>“I want the culture I usually consume through my phone to become a physical place.”</strong></p>
+      </div>
+      <div class="chapter__media">
+        <figure class="reveal"><img class="frame" src="../assets/live/hitc-7.webp" alt="Bus shelter on a city street displaying three Head in the Clouds posters with clouds, pink flowers, and the cloud-headed mascot" loading="lazy" data-zoom></figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="pain" aria-labelledby="h-pain">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>02</span> User pain points</p>
+        <h2 id="h-pain">The music is never the problem.</h2>
+        <p>Mapping the attendee journey revealed two emotional valleys. Before the music: heat, parking, security, and hours spent holding a spot at the barricade. After the music: a crowd funneled through small gates, shuttle lines, and rideshare surges, so the worst part of the night becomes the last memory of it.</p>
+        <p>The most telling signal was the pile of fan-written survival guides. When users write their own documentation for your product, <strong>the problem isn’t missing content; it’s information architecture.</strong></p>
+      </div>
+      <div class="chapter__media">
+        <ul class="findings reveal" aria-label="Pain points from research">
+          <li><strong>Heat and shade.</strong> 80–90°F afternoons on a golf course with little cover.</li>
+          <li><strong>Scattered information.</strong> Fans rely on Reddit for packing, parking, and pass advice.</li>
+          <li><strong>Confusing pass tiers.</strong> “Is VIP worth it?” is one of the most repeated questions.</li>
+          <li><strong>Fandom versus discovery.</strong> Superfans won’t leave their spot to explore.</li>
+          <li><strong>Transactional activations.</strong> Too many lines end in merch rather than play.</li>
+          <li><strong>Getting out.</strong> Exits, shuttles, and rideshare waits end the night badly.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter chapter--solo" id="site" aria-labelledby="h-site">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>03</span> Design response: the website</p>
+        <h2 id="h-site">Answer the question at the moment it’s asked.</h2>
+        <p>I cut the navigation to four destinations, each matching a stage of the fan’s journey: <strong>Lineup</strong> (who’s playing), <strong>Info</strong> (how do I prepare), <strong>Merch</strong> (what can I take home), and <strong>Buy Now</strong> (how do I get in). Every page was designed for desktop and for the phone a fan is actually holding at the gate.</p>
+        <p>Pick a page below, then scroll inside either screen to see the whole layout.</p>
+      </div>
+      <div class="chapter__media">
+        <div class="siteview reveal">
+          <div class="siteview__tabs" role="tablist" aria-label="Website pages"><button class="siteview__tab" role="tab" type="button" id="sv-tab-home" aria-controls="sv-home" aria-selected="true" tabindex="0">Home</button><button class="siteview__tab" role="tab" type="button" id="sv-tab-lineup" aria-controls="sv-lineup" aria-selected="false" tabindex="-1">Lineup</button><button class="siteview__tab" role="tab" type="button" id="sv-tab-buy" aria-controls="sv-buy" aria-selected="false" tabindex="-1">Passes</button><button class="siteview__tab" role="tab" type="button" id="sv-tab-merch" aria-controls="sv-merch" aria-selected="false" tabindex="-1">Merch</button><button class="siteview__tab" role="tab" type="button" id="sv-tab-info" aria-controls="sv-info" aria-selected="false" tabindex="-1">Info</button></div>
+          <div class="siteview__panel" role="tabpanel" id="sv-home" aria-labelledby="sv-tab-home">
+            <div class="siteview__devices">
+              <div class="browser">
+                <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>la.hitcfestival.com/</span></div>
+                <div class="browser__view" tabindex="0" role="region" aria-label="Home page, desktop. Scroll to see the full page.">
+                  <img src="../assets/hitc/d-home.webp" alt="Home page with the mascot on a billboard hill, pass cards, a newsletter sign-up, and photos, desktop layout" loading="lazy">
+                </div>
+              </div>
+              <div class="mobile" tabindex="0" role="region" aria-label="Home page, mobile. Scroll to see the full page.">
+                <img src="../assets/hitc/m-home.webp" alt="Home page with the mascot on a billboard hill, pass cards, a newsletter sign-up, and photos, mobile layout" loading="lazy">
+              </div>
+            </div>
+            <p class="siteview__note">The home page leads with the brand world, then goes straight to passes. One scroll answers what this is and how to get in.</p>
+          </div>
+          <div class="siteview__panel" role="tabpanel" id="sv-lineup" aria-labelledby="sv-tab-lineup" hidden>
+            <div class="siteview__devices">
+              <div class="browser">
+                <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>la.hitcfestival.com/lineup</span></div>
+                <div class="browser__view" tabindex="0" role="region" aria-label="Lineup page, desktop. Scroll to see the full page.">
+                  <img src="../assets/hitc/d-lineup.webp" alt="Lineup page with large photo cards for headliners and a second row of supporting artists, desktop layout" loading="lazy">
+                </div>
+              </div>
+              <div class="mobile" tabindex="0" role="region" aria-label="Lineup page, mobile. Scroll to see the full page.">
+                <img src="../assets/hitc/m-lineup.webp" alt="Lineup page with large photo cards for headliners and a second row of supporting artists, mobile layout" loading="lazy">
+              </div>
+            </div>
+            <p class="siteview__note">Faces, not text. Headliners get larger cards, so a fan knows within seconds whether their artist is playing and how big the slot is.</p>
+          </div>
+          <div class="siteview__panel" role="tabpanel" id="sv-buy" aria-labelledby="sv-tab-buy" hidden>
+            <div class="siteview__devices">
+              <div class="browser">
+                <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>la.hitcfestival.com/buy</span></div>
+                <div class="browser__view" tabindex="0" role="region" aria-label="Passes page, desktop. Scroll to see the full page.">
+                  <img src="../assets/hitc/d-buy.webp" alt="Pass Types page comparing GA, VIP, and 1999 Club cards side by side with price tiers, desktop layout" loading="lazy">
+                </div>
+              </div>
+              <div class="mobile" tabindex="0" role="region" aria-label="Passes page, mobile. Scroll to see the full page.">
+                <img src="../assets/hitc/m-buy.webp" alt="Pass Types page comparing GA, VIP, and 1999 Club cards side by side with price tiers, mobile layout" loading="lazy">
+              </div>
+            </div>
+            <p class="siteview__note">GA, VIP, and 1999 Club as matching cards: same structure, same order, “no added fees” up front. Comparison becomes a scan, not detective work.</p>
+          </div>
+          <div class="siteview__panel" role="tabpanel" id="sv-merch" aria-labelledby="sv-tab-merch" hidden>
+            <div class="siteview__devices">
+              <div class="browser">
+                <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>la.hitcfestival.com/merch</span></div>
+                <div class="browser__view" tabindex="0" role="region" aria-label="Merch page, desktop. Scroll to see the full page.">
+                  <img src="../assets/hitc/d-merch.webp" alt="Merch page with t-shirts, hats, water bottles, pins, shampoo, and a hand fan, desktop layout" loading="lazy">
+                </div>
+              </div>
+              <div class="mobile" tabindex="0" role="region" aria-label="Merch page, mobile. Scroll to see the full page.">
+                <img src="../assets/hitc/m-merch.webp" alt="Merch page with t-shirts, hats, water bottles, pins, shampoo, and a hand fan, mobile layout" loading="lazy">
+              </div>
+            </div>
+            <p class="siteview__note">Merch designed for the day: a hand fan and palette-colored bottles for the heat, and pins made to be traded.</p>
+          </div>
+          <div class="siteview__panel" role="tabpanel" id="sv-info" aria-labelledby="sv-tab-info" hidden>
+            <div class="siteview__devices">
+              <div class="browser">
+                <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>la.hitcfestival.com/info</span></div>
+                <div class="browser__view" tabindex="0" role="region" aria-label="Info page, desktop. Scroll to see the full page.">
+                  <img src="../assets/hitc/d-info.webp" alt="Festival Info page with key facts at the top and three color-coded numbered sections: Event Info, Cashless Event, What Can I Bring, desktop layout" loading="lazy">
+                </div>
+              </div>
+              <div class="mobile" tabindex="0" role="region" aria-label="Info page, mobile. Scroll to see the full page.">
+                <img src="../assets/hitc/m-info.webp" alt="Festival Info page with key facts at the top and three color-coded numbered sections: Event Info, Cashless Event, What Can I Bring, mobile layout" loading="lazy">
+              </div>
+            </div>
+            <p class="siteview__note">Built around the questions fans actually ask. Date, venue, gate and curfew times come first; each section gets a numbered badge and its own color so a first-timer can scan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="access" aria-labelledby="h-access">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>04</span> Legibility and accessibility</p>
+        <h2 id="h-access">Softness belongs in the background, not the text.</h2>
+        <p>My first draft had cream links on a white bar, white placeholders on light blue, and cream labels on pink buttons. It looked dreamy and it was hard to read, which matters at an outdoor festival where people check their phones in bright August sun.</p>
+        <p>I moved every piece of body text and every interactive label to deep teal on cream or white, turned “Buy Now” into a solid button, and gave form fields visible labels and outlined checkboxes. The palette itself came from the venue: the Pasadena sky, late-afternoon light, the flower motif, and Brookside’s grass.</p>
+      </div>
+      <div class="chapter__media">
+        <div class="compare reveal">
+          <div style="background:#fff;border:1px solid var(--rule);color:#FFF4D0"><span style="color:#FFF4D0">Lineup · Info · Merch</span><small style="color:var(--ink-2)">First draft: cream on white, 1.1 : 1</small></div>
+          <div style="background:#FFF4D0;color:#2A6E78">Lineup · Info · Merch<small style="color:#2A6E78">Revised: deep teal on cream, 5.3 : 1</small></div>
+        </div>
+        <ul class="swatches reveal" aria-label="Color palette">
+          <li class="swatch"><i style="background:#AED8E9"></i><div><b>Sky Blue</b><span>#AED8E9 · background</span></div></li>
+          <li class="swatch"><i style="background:#FFF4D0"></i><div><b>Cream</b><span>#FFF4D0 · surfaces</span></div></li>
+          <li class="swatch"><i style="background:#DCBBC8"></i><div><b>Dusty Pink</b><span>#DCBBC8 · flowers</span></div></li>
+          <li class="swatch"><i style="background:#A0B780"></i><div><b>Sage</b><span>#A0B780 · the hill</span></div></li>
+          <li class="swatch"><i style="background:#2A6E78"></i><div><b>Deep Teal</b><span>#2A6E78 · all text</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="identity" aria-labelledby="h-identity">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>05</span> Identity and merch</p>
+        <h2 id="h-identity">Merch designed for the day, not just the souvenir.</h2>
+        <p>A cloud-headed mascot and a pink flower motif run through every touchpoint, so the brand reads as a small world rather than a logo. Pastels signal calm and youth for an audience that describes the festival as a place where they feel at home.</p>
+        <p>The merch answers the research. A hand fan and water bottles in the palette respond to the heat and pair with the free refill stations. Pins, including a dated “Brookside at the Rose Bowl” badge, are made to be traded, building on the sticker swapping fans already do.</p>
+      </div>
+      <div class="chapter__media">
+        <div class="grid-4 reveal">
+          <img class="frame" src="../assets/live/hitc-3.webp" alt="Poster: Head in the Clouds, Rose Bowl, August 8 2026, with lineup sign and mascot" loading="lazy" data-zoom>
+          <img class="frame" src="../assets/live/hitc-4.webp" alt="Poster variant with clouds and a Rose Bowl lineup sign" loading="lazy" data-zoom>
+          <img class="frame" src="../assets/live/hitc-5.webp" alt="Poster variant with the logo above the lineup sign" loading="lazy" data-zoom>
+          <img class="frame" src="../assets/live/hitc-6.webp" alt="Poster variant with the mascot peeking in from the top corner" loading="lazy" data-zoom>
+        </div>
+        <figure class="reveal"><img class="frame" src="../assets/live/hitc-2.webp" alt="Wide festival banner: Head in the Clouds, Brookside at the Rose Bowl, August 8, 2026, with the lineup on a green hill" loading="lazy" data-zoom><figcaption>The banner carries the lineup, the date, and the mascot in one sweep.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="takeaway" id="takeaway" aria-labelledby="h-take"><div class="takeaway__inner">
+      <p class="chapter__label"><span>06</span> Takeaway</p>
+      <h2 id="h-take" class="reveal">Where it succeeds: making the official site the guide fans were already writing.</h2>
+      <p class="reveal">A first-time attendee should be able to find what to bring, which pass fits them, and when their artist plays without opening Reddit. That is the measurable win of this redesign: fewer questions asked elsewhere, and a brand that stays readable in the glare of the day it was made for. The research also pointed past this scope. Exit routing and discovery for fans holding their spot belong in a festival app and on-site screens, where the least enjoyable hour of the night could become part of the designed experience.</p>
+      <div class="impact">
+        <div class="reveal"><h3>For first-timers</h3><p>Preparation answered on one page, in the order people need it.</p></div>
+        <div class="reveal"><h3>For superfans</h3><p>Instant confirmation of their artist, and merch that lets them wear who they came for.</p></div>
+        <div class="reveal"><h3>Next phase</h3><p>Reframe passes as experience types (Explorer, Superfan, Comfort, All Access) and design exit routing for the app.</p></div>
+      </div>
+    </div>
+    </section>
+
+    <nav class="pager" aria-label="Project navigation">
+      <a href="mr-zeno.html"><small>Previous</small><span class="arrow arrow--l" aria-hidden="true">←</span> Mr. Zeno</a>
+      <a class="pager__next" href="cheil.html"><small>Next</small>Cheil USA (Samsung) <span class="arrow arrow--r" aria-hidden="true">→</span></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+    <span>© <span data-year>2026</span> Dominic Park</span>
+    <nav aria-label="Contact">
+      <a class="link" href="mailto:dominic.park.j@gmail.com">Gmail</a>
+      <a class="link" href="https://www.linkedin.com/in/dominic-park-b2a814282/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="link" href="../Dominic-Park-Resume.pdf" target="_blank" rel="noopener">Resume<span class="sr-only"> (PDF, opens in a new tab)</span></a>
+    </nav>
+    </div>
+  </footer>
+  <script src="../js/main.js?v=10"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Not Only for Bodega Cats — Dominic Park</title>
+  <meta name="description" content="A collection of fifty convenience-store images annotated with five symbols, made public as a can of cat food and a participatory website.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..600&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=10">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Symbol library, reused everywhere on this page -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="s-entrance" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="currentColor"/></symbol>
+    <symbol id="s-stop" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="3"/></symbol>
+    <symbol id="s-exit" viewBox="0 0 24 24"><path d="M4.5 8.5 12 16l7.5-7.5" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="s-fast" viewBox="0 0 24 24"><path d="M4.5 4.5 12 12l7.5-7.5M4.5 12 12 19.5l7.5-7.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="s-restricted" viewBox="0 0 24 24"><path d="M7 20.5 17 3.5" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="link" href="../index.html">Dominic Park</a>
+      <p class="site-header__center">[Interaction Design, Web, Packaging]</p>
+      <nav class="site-header__right" aria-label="Page">
+        <a class="link" href="../index.html"><span class="arrow arrow--l" aria-hidden="true">←</span> Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="cs-hero">
+      <h1 class="cs-hero__title reveal">Not Only for Bodega Cats</h1>
+      <p class="cs-hero__lede reveal">A record of how people think while they walk through a convenience store, made public as a can of cat food and a website that lets anyone add their own reading.</p>
+      <figure class="cs-hero__media cs-hero__media--stage reveal">
+        <div class="stage stage--bodega">
+          <picture>
+            <source srcset="../assets/bodega/cans-still.webp" media="(prefers-reduced-motion: reduce)">
+            <img class="contain" src="../assets/bodega/cans-spin.webp" alt="Three stacked cat food cans wrapped in a blue collage label, spinning slowly on a bright blue field. Rendered from my Blender file.">
+          </picture>
+        </div>
+      </figure>
+    </section>
+
+    <dl class="facts reveal">
+      <div><dt>Role</dt><dd>Research, posters, packaging, 3D cans, website</dd></div>
+      <div><dt>Duration</dt><dd>3 weeks (Sept 2026)</dd></div>
+      <div><dt>Team</dt><dd>Solo, for RISD Graphic Design Studio 3</dd></div>
+      <div><dt>Tools</dt><dd>Figma, Blender, HTML/CSS/JS, GitHub Pages</dd></div>
+    </dl>
+
+    <nav class="toc" aria-label="On this page"><div class="toc__inner">
+      <a class="link" href="#problem">Problem</a>
+      <a class="link" href="#research">Research</a>
+      <a class="link" href="#symbols">Annotation</a>
+      <a class="link" href="#audience">Audience</a>
+      <a class="link" href="#design">Design</a>
+      <a class="link" href="#results">Results</a>
+      <a class="link" href="#takeaway">Takeaway</a>
+      <a class="link" href="https://dpark06.github.io/DS3-Maybe-WORKS/" target="_blank" rel="noopener">Live site <span class="arrow arrow--ne" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>
+    </div>
+    </nav>
+
+    <section class="chapter" id="problem" aria-labelledby="h-problem">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>01</span> The problem</p>
+        <h2 id="h-problem">A store is a collection people read with their bodies.</h2>
+        <p>The unit asked one question: how can a designer organize and annotate a collection to create meaning for a specific audience? Every aisle in a convenience store asks a shopper to stop, hurry, or leave, and those small decisions are almost never recorded.</p>
+        <p>I began by comparing convenience stores across Korea, Japan, the US, and the UK. My professor pushed back on that framing, because “East” and “West” are too general to say anything true. So I stopped comparing countries and turned toward <strong>the experience inside one shared store</strong>: what people see, what they skip, and what stays hidden from them.</p>
+      </div>
+      <div class="chapter__media">
+        <figure class="reveal">
+          <img class="frame" src="../assets/bodega/poster-path.webp" alt="Poster: a thick blue path winds through a dense collage of convenience store photographs, labeled Entrance, Stopping Points, Move Fast, Restricted, and Exit" loading="lazy" data-zoom style="max-height:820px;margin:0 auto">
+          <figcaption>Poster 1 of the diptych, 24 × 36 in. The path of customer traffic, woven through the collection.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="research" aria-labelledby="h-research">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>02</span> Research</p>
+        <h2 id="h-research">Fifty images, sorted by who gets to see them.</h2>
+        <p>The collection holds fifty photographs, screenshots, and signs: storefronts, Slurpee cups, bento trays, lottery walls, restrooms, Yelp pages, and the New York bodega cat. Each one went into one of two groups. <strong>Flashy</strong> images work as content; a bodega cat belongs in a 24-hour video challenge. <strong>Real</strong> images stay off social media; the restroom and the register belong to the people who work there.</p>
+        <p>The layout came from how stores are actually planned: a decompression zone at the door, a long loop around the edges, and the things people came for placed at the back. The collage is not decoration; <strong>it is a floor plan made of photographs.</strong></p>
+      </div>
+      <div class="chapter__media">
+        <div class="masonry reveal">
+          <img class="frame" src="../assets/bodega/photo-01.webp" alt="A Japanese 7-Eleven storefront with bicycles parked outside" loading="lazy">
+          <img class="frame" src="../assets/bodega/photo-07.webp" alt="A tabby bodega cat lying down, cut out from its background" loading="lazy">
+          <img class="frame" src="../assets/bodega/photo-23.webp" alt="Grocery shelf stacked with jars of pasta sauce and mayonnaise" loading="lazy">
+          <img class="frame" src="../assets/bodega/photo-12.webp" alt="Buc-ee's website banner advertising gift cards" loading="lazy">
+          <img class="frame" src="../assets/bodega/photo-18.webp" alt="Black and white photo of an early Texas convenience store with a Did You Know label" loading="lazy">
+          <img class="frame" src="../assets/bodega/photo-36.webp" alt="Map search results for convenience stores nearby" loading="lazy">
+          <img class="frame" src="../assets/bodega/photo-44.webp" alt="Line illustration of a convenience store front with people walking past" loading="lazy">
+          <img class="frame" src="../assets/bodega/photo-30.webp" alt="Promotional photo of the cast of the sitcom Kim's Convenience" loading="lazy">
+        </div>
+        <p class="aside-note reveal">Eight of the fifty. The final split was 35 flashy and 15 real.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="symbols" aria-labelledby="h-symbols">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>03</span> Annotation</p>
+        <h2 id="h-symbols">Five symbols for the steps of a reaction.</h2>
+        <p>A person enters, stops, moves fast, avoids what is restricted, and leaves. I drew one symbol for each step and placed them directly on the photographs, so intention, hesitation, and avoidance become visible without a single sentence of explanation.</p>
+        <p>The placement follows a logic. Food gets the open circle, because you stop there to decide which Slurpee flavor is worth it. The cashier gets the double chevron, because you want to leave once you’ve paid. Back rooms get the slash.</p>
+      </div>
+      <div class="chapter__media">
+        <ul class="legend reveal" aria-label="Symbol legend">
+          <li><svg aria-hidden="true"><use href="#s-entrance"/></svg><b>Entrance</b><span>Where attention starts</span></li>
+          <li><svg aria-hidden="true"><use href="#s-stop"/></svg><b>Stopping point</b><span>Slow down, compare, decide</span></li>
+          <li><svg aria-hidden="true"><use href="#s-exit"/></svg><b>Exit</b><span>Time to head out</span></li>
+          <li><svg aria-hidden="true"><use href="#s-fast"/></svg><b>Move fast</b><span>Hurry past this</span></li>
+          <li><svg aria-hidden="true"><use href="#s-restricted"/></svg><b>Restricted</b><span>Staff only</span></li>
+        </ul>
+        <figure class="reveal">
+          <img class="frame" src="../assets/bodega/poster-cat-collage.jpg" width="1600" height="2400" alt="Poster 2: on a bright blue field, a bodega cat built from hundreds of small photo tiles, each stamped with a symbol and a short caption, under a key of the five symbols" loading="lazy" data-zoom style="max-height:900px;width:auto;margin:0 auto">
+          <figcaption>Poster 2 of the diptych, 24 × 36 in. The bodega cat, built from 755 tiles of the fifty photographs; every tile carries a symbol and a reason.</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img class="frame" src="../assets/bodega/poster-cat-detail.jpg" width="1400" height="919" alt="Close-up of the cat poster: photo tiles with symbols at their centers and crowded captions such as You'd stop here trying to decide which one is worth getting, and This catches your eye" loading="lazy" data-zoom>
+          <figcaption>Close-up. The captions overflow the outline on purpose; a shelf overflows too.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="audience" aria-labelledby="h-audience">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>04</span> Audience</p>
+        <h2 id="h-audience">The critique that changed who this was for.</h2>
+        <p>My first posters had two audiences: content creators for the flashy side and store workers for the real side. The critique was direct; <strong>the posters didn’t look like they were about the images I had collected.</strong> So I rebuilt both posters out of the images themselves, and asked a sharper question about audience.</p>
+        <p>Who already reacts to this store before they read anything? Cat owners. The bodega cat greets regulars, lounges on displays, and keeps the stockroom clear of mice. A can of cat food is sold in the store, gets picked up and turned over, and comes with a label people read. Its ingredients list became my legend.</p>
+      </div>
+      <div class="chapter__media">
+        <figure class="reveal">
+          <img class="frame" src="../assets/bodega/label-for-cans.jpg" width="2000" height="799" alt="Label for the cans: three blue stickers, each with a barcode, a guaranteed analysis panel, an ingredients list made of the five symbols, feeding guidelines, and a strip of the collage and path" loading="lazy" data-zoom>
+          <figcaption>Label for the cans. Guaranteed Analysis reads like a real label; the Ingredients list (Entrance, Stopping Points, Exit, Move Fast, Restricted) is the legend. The collage strip continues from can to can when they are stacked.</figcaption>
+        </figure>
+        <figure class="reveal frame" style="background:#0B4AFF">
+          <img src="../assets/bodega/cat-run.webp" alt="Animated collage cat running toward the viewer" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="design" aria-labelledby="h-design">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>05</span> Design response</p>
+        <h2 id="h-design">A website that hands the annotation to everyone else.</h2>
+        <p>The posters are my reading of the collection. The website asks for yours. A visitor taps a photograph, chooses the symbol that matches how they would move through that part of the store, and gets an image they can download or share. <strong>There are no wrong answers;</strong> the same photo can be a stopping point for one person and an exit for another.</p>
+        <p>The system stays restrained so the content can stay loud: one blue (<code>#0B4AFF</code>), chosen because cats see blues far more easily than warm colors; white type; and Oswald in three weights, tall and condensed like convenience-store signage. The site is mobile first because the QR flow on the can depends on phones.</p>
+        <p style="margin-top:22px"><a class="btn" href="https://dpark06.github.io/DS3-Maybe-WORKS/" target="_blank" rel="noopener">Visit the live site <span class="arrow arrow--ne" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></p>
+      </div>
+      <div class="chapter__media">
+        <div class="symbol-demo reveal" id="demo">
+          <p class="symbol-demo__hint" id="demo-hint">Try it: pick a photo, then pick how you’d move through it.</p>
+          <div class="symbol-demo__photos" role="group" aria-labelledby="demo-hint">
+            <button class="sd-photo" type="button" aria-pressed="false" data-name="7-Eleven storefront"><img src="../assets/bodega/photo-01.webp" alt=""><span class="sr-only">7-Eleven storefront</span><span class="stamp" aria-hidden="true"></span></button>
+            <button class="sd-photo" type="button" aria-pressed="true" data-name="Bodega cat"><img src="../assets/bodega/photo-07.webp" alt=""><span class="sr-only">Bodega cat</span><span class="stamp" aria-hidden="true"></span></button>
+            <button class="sd-photo" type="button" aria-pressed="false" data-name="Sauce shelf"><img src="../assets/bodega/photo-23.webp" alt=""><span class="sr-only">Sauce shelf</span><span class="stamp" aria-hidden="true"></span></button>
+            <button class="sd-photo" type="button" aria-pressed="false" data-name="Illustrated storefront"><img src="../assets/bodega/photo-44.webp" alt=""><span class="sr-only">Illustrated storefront</span><span class="stamp" aria-hidden="true"></span></button>
+          </div>
+          <div class="symbol-demo__keys" role="group" aria-label="Choose a symbol">
+            <button class="sd-key" type="button" data-s="entrance"><svg aria-hidden="true"><use href="#s-entrance"/></svg>Entrance</button>
+            <button class="sd-key" type="button" data-s="stop"><svg aria-hidden="true"><use href="#s-stop"/></svg>Stopping point</button>
+            <button class="sd-key" type="button" data-s="exit"><svg aria-hidden="true"><use href="#s-exit"/></svg>Exit</button>
+            <button class="sd-key" type="button" data-s="fast"><svg aria-hidden="true"><use href="#s-fast"/></svg>Move fast</button>
+            <button class="sd-key" type="button" data-s="restricted"><svg aria-hidden="true"><use href="#s-restricted"/></svg>Restricted</button>
+          </div>
+          <p class="symbol-demo__msg" aria-live="polite"></p>
+        </div>
+        <div class="grid-3 reveal">
+          <figure><img class="frame" src="../assets/bodega/convenience-store-cat.jpg" alt="A bodega cat eating from the can on a convenience store counter" loading="lazy" data-zoom><figcaption>In the store</figcaption></figure>
+          <figure><img class="frame" src="../assets/bodega/home-cat.jpg" alt="A cat eating from the can at home while its owner pets it" loading="lazy" data-zoom><figcaption>At home</figcaption></figure>
+          <figure><img class="frame" src="../assets/bodega/on-the-shelf.jpg" alt="Three stacked cans on a pet care shelf in a convenience store" loading="lazy" data-zoom><figcaption>On the shelf</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="results" aria-labelledby="h-results">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>06</span> Results</p>
+        <h2 id="h-results">Three public forms, one system.</h2>
+        <p>A 48 × 36 in diptych: one poster shows the place, a map you walk through with each image used once; the other shows the reaction, a cat built from 755 tiles where every repeat carries a new reason. A sticker sheet that wraps three cans so the collage continues from the top can to the bottom. Tins modeled in Blender down to the score line on the lid, because the structure is what sells it as cat food. And a live website that keeps collecting readings after the critique ends.</p>
+      </div>
+      <div class="chapter__media">
+        <div class="stats reveal">
+          <div class="stat"><b>50</b><span>images in the collection</span></div>
+          <div class="stat"><b>5</b><span>symbols in the annotation system</span></div>
+          <div class="stat"><b>755</b><span>tiles in the cat poster</span></div>
+          <div class="stat"><b>3</b><span>public forms: posters, cans, website</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="takeaway" id="takeaway" aria-labelledby="h-take"><div class="takeaway__inner">
+      <p class="chapter__label"><span>07</span> Takeaway</p>
+      <h2 id="h-take" class="reveal">Where it succeeds: turning a private habit into a public conversation.</h2>
+      <p class="reveal">Nobody thinks about how they move through a corner store, which is exactly why it is worth recording. For store owners who keep a bodega cat, the project gives their mascot a product and a reason for regulars to talk about the shop. For cat owners at home, it turns an errand into a small game that travels on social media. For me, it clarified what participation design asks of a designer: build the system carefully, then let go of the answer. Is a collection finished when the collector stops adding to it, or when other people start reading it differently?</p>
+      <div class="impact">
+        <div class="reveal"><h3>For store owners</h3><p>A mascot product that belongs on their own shelf and brings customers into the conversation.</p></div>
+        <div class="reveal"><h3>For cat owners</h3><p>A reason to look at a familiar place again, and a shareable way to say how they see it.</p></div>
+        <div class="reveal"><h3>Next</h3><p>Test the QR sharing on real phones from the live address, and track which photos draw the most varied answers.</p></div>
+      </div>
+    </div>
+    </section>
+
+    <nav class="pager" aria-label="Project navigation">
+      <a href="providence-promise.html"><small>Previous</small><span class="arrow arrow--l" aria-hidden="true">←</span> Providence Promise</a>
+      <a class="pager__next" href="mr-zeno.html"><small>Next</small>Mr. Zeno <span class="arrow arrow--r" aria-hidden="true">→</span></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+    <span>© <span data-year>2026</span> Dominic Park</span>
+    <nav aria-label="Contact">
+      <a class="link" href="mailto:dominic.park.j@gmail.com">Gmail</a>
+      <a class="link" href="https://www.linkedin.com/in/dominic-park-b2a814282/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="link" href="../Dominic-Park-Resume.pdf" target="_blank" rel="noopener">Resume<span class="sr-only"> (PDF, opens in a new tab)</span></a>
+    </nav>
+    </div>
+  </footer>
+  <script src="../js/main.js?v=10"></script>
+  <script>
+    // Mini version of the live site's interaction: choose a photo, stamp a symbol.
+    (function () {
+      var demo = document.getElementById('demo');
+      if (!demo) return;
+      var photos = demo.querySelectorAll('.sd-photo');
+      var msg = demo.querySelector('.symbol-demo__msg');
+      var lines = {
+        entrance: ['Entrance', 'That’s where your attention starts.'],
+        stop: ['Stopping point', 'Great spot to linger. Take your time!'],
+        exit: ['Exit', 'Time to head out. See you tomorrow!'],
+        fast: ['Move fast', 'Zoom zoom! Snack run complete.'],
+        restricted: ['Restricted', 'Staff only. Nice try!']
+      };
+      function current() { return demo.querySelector('.sd-photo[aria-pressed="true"]') || photos[0]; }
+      photos.forEach(function (p) {
+        p.addEventListener('click', function () {
+          photos.forEach(function (q) { q.setAttribute('aria-pressed', q === p ? 'true' : 'false'); });
+        });
+      });
+      demo.querySelectorAll('.sd-key').forEach(function (k) {
+        k.addEventListener('click', function () {
+          var p = current(), s = k.dataset.s, stamp = p.querySelector('.stamp');
+          stamp.classList.remove('is-on');
+          stamp.innerHTML = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fff"/><g transform="translate(4 4) scale(.667)"><use href="#s-' + s + '"/></g></svg>';
+          void stamp.offsetWidth;
+          stamp.classList.add('is-on');
+          msg.textContent = p.dataset.name + ': ' + lines[s][0] + '. ' + lines[s][1];
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

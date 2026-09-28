@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mr. Zeno — Dominic Park</title>
+  <meta name="description" content="A toy and app that give first-generation and introverted students a low-stakes place to rehearse professional conversations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=10">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.3.1/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="link" href="../index.html">Dominic Park</a>
+      <p class="site-header__center">[UX/UI, 3D Modeling, Package Design]</p>
+      <nav class="site-header__right" aria-label="Page">
+        <a class="link" href="../index.html"><span class="arrow arrow--l" aria-hidden="true">←</span> Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="cs-hero">
+      <h1 class="cs-hero__title reveal">Mr. Zeno</h1>
+      <p class="cs-hero__lede reveal">A toy and an app that give students somewhere to rehearse the professional conversations they’ve never had, before the first one counts.</p>
+      <figure class="cs-hero__media reveal"><img class="cover" src="../assets/zeno/student.jpg" alt="A student at a campus table practices with the Mr. Zeno app on his phone while holding the Zeno figure from its open box"></figure>
+    </section>
+
+    <dl class="facts reveal">
+      <div><dt>Role</dt><dd>Research, 3D character, UI, packaging</dd></div>
+      <div><dt>Duration</dt><dd>About 1 week</dd></div>
+      <div><dt>Team</dt><dd>Solo, self-initiated</dd></div>
+      <div><dt>Tools</dt><dd>Figma, Cinema 4D, Spline, Illustrator</dd></div>
+    </dl>
+
+    <nav class="toc" aria-label="On this page"><div class="toc__inner">
+      <a class="link" href="#problem">Problem</a>
+      <a class="link" href="#why">Why not a person?</a>
+      <a class="link" href="#play">Why play</a>
+      <a class="link" href="#design">Design</a>
+      <a class="link" href="#results">Results</a>
+      <a class="link" href="#takeaway">Takeaway</a>
+    </div>
+    </nav>
+
+    <section class="chapter" id="problem" aria-labelledby="h-problem">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>01</span> The problem</p>
+        <h2 id="h-problem">Knowing what to say isn’t the same as having said it.</h2>
+        <p>High school and college students start meeting adults in professional roles long before anyone teaches them how: a first interview, a first supervisor, a first message to a coworker. First-generation and introverted students often know exactly what they want to communicate. What they lack is <strong>practice</strong>, and the first rehearsal usually happens in the real conversation, with real stakes.</p>
+        <p>That gap is the user pain point. It isn’t missing information; there is no shortage of articles about interview etiquette. It is missing repetition in a place where a mistake costs nothing.</p>
+      </div>
+      <div class="chapter__media">
+        <figure class="reveal"><img class="frame" src="../assets/zeno/train.jpg" alt="3D render of Mr. Zeno seated alone in a warm, empty train car full of mustard-colored seats" loading="lazy" data-zoom><figcaption>Zeno’s world, modeled in Cinema 4D: a calm, empty space to practice in.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="why" aria-labelledby="h-why">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>02</span> Why not just talk to a person?</p>
+        <h2 id="h-why">A coach is the goal. Zeno is the rehearsal before it.</h2>
+        <p>A reviewer asked the right question: why would a mascot be better than a real person? It isn’t. A mentor, a career coach, or a campus career center will always teach professional communication better than an app can. The problem is who gets to the mentor. The students who most need one are often the least likely to have one, and walking into a mock interview is itself the kind of conversation they are nervous about.</p>
+        <p>So Zeno is not a replacement for people; <strong>it is a warm-up for them.</strong> It lowers the cost of the first attempt so the student arrives at the career center, the interview, or the internship having already said the words out loud once.</p>
+      </div>
+      <div class="chapter__media">
+        <ul class="map-list reveal" aria-label="How Zeno fits among existing options">
+          <li><span class="from">Career coach or mentor</span><span class="via" aria-hidden="true">→</span><span class="to">Best feedback, but depends on access and courage to ask</span></li>
+          <li><span class="from">Campus mock interviews</span><span class="via" aria-hidden="true">→</span><span class="to">Realistic, but high stakes for a nervous first-timer</span></li>
+          <li><span class="from">AI interview-practice tools</span><span class="via" aria-hidden="true">→</span><span class="to">Focused on answering interview questions</span></li>
+          <li><span class="from">Mr. Zeno</span><span class="via" aria-hidden="true">→</span><span class="to">Everyday workplace moments, practiced through play, before any of the above</span></li>
+        </ul>
+        <p class="aside-note reveal">A formal competitor benchmark and testing with first-generation students are the next step for this prototype; see the takeaway below.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="play" aria-labelledby="h-play">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>03</span> Why play</p>
+        <h2 id="h-play">Play is how people practice being somewhere they haven’t been yet.</h2>
+        <p>Instead of asking how to teach students professional etiquette, I asked how play could give someone a safe space to rehearse a situation they haven’t experienced. Children use dolls to act out the doctor’s office before they visit one; Zeno borrows that idea for the first day at an internship.</p>
+        <p>The physical toy matters. Opening the box, holding the figure, and setting it on the desk turns a practice session into a small ritual instead of another notification.</p>
+      </div>
+      <div class="chapter__media">
+        <ol class="findings findings--3 reveal" aria-label="The idea in six steps">
+          <li>Physical play</li><li>Scenario</li><li>Practice</li><li>Communication</li><li>Confidence</li><li>Real-world use</li>
+        </ol>
+        <div class="grid-2 reveal">
+          <figure><img class="frame" src="../assets/zeno/box-open.jpg" alt="Laser-cut wooden box unfolded to reveal the 3D printed Zeno figure sitting inside" loading="lazy" data-zoom></figure>
+          <figure><img class="frame" src="../assets/zeno/box-closed.jpg" alt="The wooden Zeno box standing upright with a patterned side panel and the figure seated in its doorway" loading="lazy" data-zoom></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="design" aria-labelledby="h-design">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>04</span> Design response</p>
+        <h2 id="h-design">Short scenarios, spoken or typed, with Zeno on your side.</h2>
+        <p>The app is built around a scenario map: moments like <strong>First Impressions</strong> or writing a resignation letter. Each scenario can be practiced out loud with a voice recording or typed as a chat. Zeno opens every session by naming the nerves (“Nervous? That just means you care.”), then gives feedback and points after each attempt.</p>
+        <p>Points, streaks, and a collection of Zeno outfits keep the rhythm of a game, but the visual hierarchy always puts the next practice first. Past recordings let students hear themselves improve.</p>
+      </div>
+      <div class="chapter__media">
+        <figure class="reveal"><img class="frame" src="../assets/zeno/screens-row1.jpg" alt="Four app screens: Home with points and streak, First Impressions scenario intro, voice practice with a record button, and a chat practice conversation" loading="lazy" data-zoom><figcaption>Home, scenario intro, voice practice, chat practice.</figcaption></figure>
+        <figure class="reveal"><img class="frame" src="../assets/zeno/screens-row2.jpg" alt="Four app screens: scenario map list, feedback screen awarding 25 points, Zeno collection, and past recordings" loading="lazy" data-zoom><figcaption>Scenario map, feedback, collection, past recordings.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="results" aria-labelledby="h-results">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>05</span> Results</p>
+        <h2 id="h-results">A working medium-fidelity prototype, a printed figure, and its box.</h2>
+        <p>In about a week I built the character in 3D, printed and packaged it, and designed eight app screens that let me watch how people move through a guided conversation. The prototype answers whether the flow makes sense. It doesn’t yet answer whether students feel more confident afterward, and that is the question worth testing next.</p>
+      </div>
+      <div class="chapter__media">
+        <figure class="reveal model-figure">
+          <model-viewer class="model" src="../assets/zeno/zeno.glb" poster="../assets/zeno/zeno-3d-poster.webp"
+            alt="Interactive 3D model of the Mr. Zeno figure: a small character with a star-shaped head and antenna loop, wearing a buttoned shirt with a collar"
+            camera-controls touch-action="pan-y" disable-zoom auto-rotate auto-rotate-delay="2500" rotation-per-second="18deg"
+            interaction-prompt="auto" shadow-intensity="0.6" shadow-softness="1" exposure="1.05" environment-image="neutral"
+            camera-orbit="0deg 78deg 105%" loading="lazy"></model-viewer>
+          <figcaption>The printable model, reassembled. Drag to turn Zeno all the way around.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="takeaway" id="takeaway" aria-labelledby="h-take"><div class="takeaway__inner">
+      <p class="chapter__label"><span>06</span> Takeaway</p>
+      <h2 id="h-take" class="reveal">Where it succeeds: the student who has never had a boss.</h2>
+      <p class="reveal">The first-generation student starting an internship is not missing ability; they are missing the rehearsals that other students got at dinner tables and family offices. If Zeno works, its impact is small and specific: one less first attempt made under pressure. Career centers could hand out the toy at orientation, and students could practice the week before their first mock interview rather than instead of it. What I would change is the order I worked in. Next time, the benchmark and the conversations with students come first, and the mascot comes second.</p>
+      <div class="impact">
+        <div class="reveal"><h3>Who it’s for</h3><p>First-generation and introverted students heading into interviews, internships, and first jobs.</p></div>
+        <div class="reveal"><h3>How to validate</h3><p>Benchmark against career-center mock interviews and practice apps, then test with 5–8 students, measuring confidence before and after.</p></div>
+        <div class="reveal"><h3>What I learned</h3><p>A character can lower the stakes, but only research can prove the stakes were lowered.</p></div>
+      </div>
+    </div>
+    </section>
+
+    <nav class="pager" aria-label="Project navigation">
+      <a href="bodega-cats.html"><small>Previous</small><span class="arrow arrow--l" aria-hidden="true">←</span> Not Only for Bodega Cats</a>
+      <a class="pager__next" href="head-in-the-clouds.html"><small>Next</small>Head in the Clouds <span class="arrow arrow--r" aria-hidden="true">→</span></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+    <span>© <span data-year>2026</span> Dominic Park</span>
+    <nav aria-label="Contact">
+      <a class="link" href="mailto:dominic.park.j@gmail.com">Gmail</a>
+      <a class="link" href="https://www.linkedin.com/in/dominic-park-b2a814282/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="link" href="../Dominic-Park-Resume.pdf" target="_blank" rel="noopener">Resume<span class="sr-only"> (PDF, opens in a new tab)</span></a>
+    </nav>
+    </div>
+  </footer>
+  <script src="../js/main.js?v=10"></script>
+</body>
+</html>

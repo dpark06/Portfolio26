@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Living Outside — Dominic Park</title>
+  <meta name="description" content="A website redesign for Living Outside, a youth-led nonprofit working to destigmatize homelessness. Work in progress.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=10">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="link" href="../index.html">Dominic Park</a>
+      <p class="site-header__center">[UX Research, Information Architecture, Web Design]</p>
+      <nav class="site-header__right" aria-label="Page">
+        <a class="link" href="../more.html"><span class="arrow arrow--l" aria-hidden="true">←</span> More projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="cs-hero">
+      <p class="wip reveal">Work in progress</p>
+      <h1 class="cs-hero__title reveal">Living Outside</h1>
+      <p class="cs-hero__lede reveal">A website redesign for a youth-led nonprofit whose real product isn’t a care bag. It’s the conversation that happens when someone hands one over.</p>
+      <div class="cs-hero__media reveal" style="background:transparent">
+        <div class="browser">
+          <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>livingoutside.org</span></div>
+          <div class="browser__view" tabindex="0" role="region" aria-label="Redesigned home page. Scroll to see the full page.">
+            <img src="../assets/lo/home.webp" alt="Redesigned Living Outside home page: Humanizing homelessness, one connection at a time; What we do, Why we do it, How we do it; impact numbers; three ways to help; recent blog posts; an upcoming webinar; and the team">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <dl class="facts reveal">
+      <div><dt>Role</dt><dd>UX Design Volunteer: research, navigation, page design</dd></div>
+      <div><dt>Duration</dt><dd>Jul 2026 – present (in progress)</dd></div>
+      <div><dt>Team</dt><dd>3 volunteer designers, with the co-founders</dd></div>
+      <div><dt>Tools</dt><dd>Figma, FigJam</dd></div>
+    </dl>
+
+    <nav class="toc" aria-label="On this page"><div class="toc__inner">
+      <a class="link" href="#problem">Problem</a>
+      <a class="link" href="#research">Research</a>
+      <a class="link" href="#pain">User pain points</a>
+      <a class="link" href="#design">Design response</a>
+      <a class="link" href="#brand">Brand &amp; accessibility</a>
+      <a class="link" href="#pages">The pages</a>
+      <a class="link" href="#takeaway">Takeaway</a>
+    </div>
+    </nav>
+
+    <section class="chapter" id="problem" aria-labelledby="h-problem">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>01</span> The problem</p>
+        <h2 id="h-problem">A nonprofit about connection, behind a website that played hide and seek.</h2>
+        <p>Living Outside is a youth-led nonprofit working to destigmatize homelessness. Volunteers build care bags of food, water, socks, hygiene supplies, and stamped postcards, then hand them directly to people living outside. The bag is not the point; <strong>it is the reason to start a conversation.</strong></p>
+        <p>The old website did not tell that story. Information lived several clicks deep, and buttons led to pages no one expected. The co-founder who built it knew where everything was; nobody else did. In their words, visitors <strong>“have to play hide and seek for the information.”</strong></p>
+      </div>
+      <div class="chapter__media">
+        <div class="stats reveal">
+          <div class="stat"><b>7,500+</b><span>care bags created</span></div>
+          <div class="stat"><b>1,000+</b><span>volunteers</span></div>
+          <div class="stat"><b>30+</b><span>distribution events</span></div>
+          <div class="stat"><b>20</b><span>chapters led by high schoolers</span></div>
+        </div>
+        <figure class="reveal">
+          <img class="frame frame--line" src="../assets/lo/original-webinars.webp" width="1151" height="1373" alt="The original Living Outside webinars page: a pale header, a small row of past-event photos, and a sign-up block with little hierarchy" loading="lazy" data-zoom>
+          <figcaption>Before: the original Webinars page. Content was there; hierarchy and next steps were not.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="research" aria-labelledby="h-research">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>02</span> Research</p>
+        <h2 id="h-research">Six audiences, one front door.</h2>
+        <p>We started by interviewing the co-founders and mapping who actually arrives at the site and where they come from. The list was long: grant makers looking for credibility, busy adults who want one Saturday of volunteering, corporations planning service days, teenagers who want to start a chapter, and teachers who need structure before they sponsor a club.</p>
+        <p>That map exposed the core problem. <strong>“Get involved” was not one action; it was six.</strong> A person who wants to volunteer once and a person who wants to start an international chapter were being sent through the same door.</p>
+      </div>
+      <div class="chapter__media">
+        <div class="quotes">
+          <blockquote class="quote reveal">“Living Outside is a belief. The purpose of the website is to share ideas, not just the care bags.”<cite>Co-founder interview</cite></blockquote>
+          <blockquote class="quote reveal">“It works and gets the job done, but it doesn’t reflect what we’ve done in three years.”<cite>Co-founder interview</cite></blockquote>
+        </div>
+        <figure class="reveal">
+          <img class="frame frame--line" src="../assets/lo/audiences.webp" width="1340" height="1098" alt="Audience map table: grants, everyday adults and donors, people heavily involved in the space, young people and teens, and educators, with who they are, what they look for, and where they come from" loading="lazy" data-zoom>
+          <figcaption>Audience map: who they are, what they are looking for, and where they are coming from.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="pain" aria-labelledby="h-pain">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>03</span> User pain points</p>
+        <h2 id="h-pain">Everyone wanted to help. Nobody knew where to start.</h2>
+        <p>Personas made the gap concrete. A student like Maya worries about saying the wrong thing. A chapter head like Ethan understands the mission but not the logistics. A donor like David wants to know what his money makes possible. And Marcus, who receives the bags, asks the question the whole project rests on.</p>
+        <p>First-time volunteers need <strong>social guidance</strong> as much as a packing list, because the mission depends on the moment of interaction.</p>
+      </div>
+      <div class="chapter__media">
+        <ul class="personas reveal" aria-label="Personas">
+          <li><b>Maya, 17 · Student volunteer</b><q>I want to help, but I don’t want to accidentally do something insensitive.</q></li>
+          <li><b>Ethan, 16 · Chapter head</b><q>I understand the mission. I need help turning it into something I can actually organize.</q></li>
+          <li><b>Rachel, 34 · First-time adult volunteer</b><q>Just tell me where to go, what to bring, and what I should know.</q></li>
+          <li><b>David, 45 · Donor and parent</b><q>I want to understand what my donation makes possible.</q></li>
+          <li><b>Marcus, 42 · Care-bag recipient</b><q>Ask me what I need instead of assuming what I need.</q></li>
+          <li><b>Ms. Rodriguez, 39 · Teacher</b><q>I want students to lead this. I just need the structure to do it responsibly.</q></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="design" aria-labelledby="h-design">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>04</span> Design response</p>
+        <h2 id="h-design">Fewer clicks, and every button goes where it says.</h2>
+        <p>We rebuilt the sitemap around one rule: each audience should reach its goal in one or two clicks. The home page now answers <strong>what we do, why we do it, and how we do it</strong> before asking for anything, then splits “get involved” into clear paths: care bags, chapters, and events, with Donate always one tap away in the navigation.</p>
+        <p>Every page also carries the story. The Care Bags page explains what goes inside and why; Chapters walk a teenager from “what is a chapter?” to applying in five steps.</p>
+      </div>
+      <div class="chapter__media">
+        <figure class="reveal">
+          <img class="frame frame--line" src="../assets/lo/sitemap.webp" width="1340" height="633" alt="New sitemap: About, Our Team, Learn, Get Involved, Contact, and Donate at the top level, each with a short set of sub-pages" loading="lazy" data-zoom>
+          <figcaption>The new sitemap: flatter, with one path per audience.</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img class="frame frame--line" src="../assets/lo/about-wireframe.webp" width="1340" height="3669" alt="Grayscale wireframe of the About page: philosophy, story, impact, the founders’ story, packaging, and FAQ" loading="lazy" data-zoom style="max-height:900px;width:auto;margin:0 auto">
+          <figcaption>An early About wireframe, before the brand came in.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="brand" aria-labelledby="h-brand">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>05</span> Brand and accessibility</p>
+        <h2 id="h-brand">Warm enough to feel human, clear enough to read.</h2>
+        <p>The original palette failed contrast checks, so we scrapped it and built a new one from the same feeling: mint, sea, teal, midnight, and a light pink, each pairing tested against WCAG. Montserrat carries the headlines, Cabin carries the body, and a handwritten Cabin Sketch appears sparingly for the human touch. Rounded shapes and circles replace sharp rectangles, because the brand is about people meeting each other.</p>
+      </div>
+      <div class="chapter__media">
+        <figure class="reveal">
+          <img class="frame frame--line" src="../assets/lo/brand.webp" width="1340" height="2078" alt="Brand sheet: new color palette with contrast notes, color pairings, typography with Montserrat, Cabin, and Cabin Sketch, section dividers, image treatment, icons and shapes, and buttons" loading="lazy" data-zoom>
+          <figcaption>The brand sheet, including the pairings we ruled out.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter chapter--solo" id="pages" aria-labelledby="h-pages">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>06</span> The pages (in progress)</p>
+        <h2 id="h-pages">Each page answers one audience’s first question.</h2>
+        <p>Pick a page, then scroll inside the window to see the whole layout. These are current Figma designs and are still changing with feedback from the team.</p>
+      </div>
+      <div class="chapter__media">
+        <div class="siteview reveal">
+          <div class="siteview__tabs" role="tablist" aria-label="Website pages">
+            <button class="siteview__tab" role="tab" type="button" id="lo-tab-home" aria-controls="lo-home" aria-selected="true" tabindex="0">Home</button>
+            <button class="siteview__tab" role="tab" type="button" id="lo-tab-bags" aria-controls="lo-bags" aria-selected="false" tabindex="-1">Care Bags</button>
+            <button class="siteview__tab" role="tab" type="button" id="lo-tab-chapter" aria-controls="lo-chapter" aria-selected="false" tabindex="-1">Chapters</button>
+            <button class="siteview__tab" role="tab" type="button" id="lo-tab-events" aria-controls="lo-events" aria-selected="false" tabindex="-1">Events</button>
+            <button class="siteview__tab" role="tab" type="button" id="lo-tab-donate" aria-controls="lo-donate" aria-selected="false" tabindex="-1">Donate</button>
+          </div>
+          <div class="siteview__panel" role="tabpanel" id="lo-home" aria-labelledby="lo-tab-home">
+            <div class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>livingoutside.org</span></div>
+              <div class="browser__view browser__view--tall" tabindex="0" role="region" aria-label="Home page. Scroll to see the full page."><img src="../assets/lo/home.webp" alt="Home page design" loading="lazy"></div></div>
+            <p class="siteview__note">What, why, and how come first; then impact, then three clear ways to help.</p>
+          </div>
+          <div class="siteview__panel" role="tabpanel" id="lo-bags" aria-labelledby="lo-tab-bags" hidden>
+            <div class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>livingoutside.org/care-bags</span></div>
+              <div class="browser__view browser__view--tall" tabindex="0" role="region" aria-label="Care Bags page. Scroll to see the full page."><img src="../assets/lo/carebags.webp" alt="Care Bags page: what goes in a care bag, how to make one in six steps, additional resources, and a donate option" loading="lazy"></div></div>
+            <p class="siteview__note">What goes in a bag and why, then how to make one in six steps. Can’t make one yourself? Donate is right there.</p>
+          </div>
+          <div class="siteview__panel" role="tabpanel" id="lo-chapter" aria-labelledby="lo-tab-chapter" hidden>
+            <div class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>livingoutside.org/chapters</span></div>
+              <div class="browser__view browser__view--tall" tabindex="0" role="region" aria-label="Chapters page. Scroll to see the full page."><img src="../assets/lo/chapter.webp" alt="Chapters page: what is a chapter, what chapter heads do, five steps to start a chapter, and the participating chapters" loading="lazy"></div></div>
+            <p class="siteview__note">From “what is a chapter?” to applying in five steps, with the 20 existing chapters as proof it works.</p>
+          </div>
+          <div class="siteview__panel" role="tabpanel" id="lo-events" aria-labelledby="lo-tab-events" hidden>
+            <div class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>livingoutside.org/events</span></div>
+              <div class="browser__view browser__view--tall" tabindex="0" role="region" aria-label="Events page. Scroll to see the full page."><img src="../assets/lo/events.webp" alt="Events page: past events, the latest webinar, partners, and a prompt to share an idea" loading="lazy"></div></div>
+            <p class="siteview__note">Past events, the latest webinar, and the kinds of partners Living Outside works with, from schools to corporations.</p>
+          </div>
+          <div class="siteview__panel" role="tabpanel" id="lo-donate" aria-labelledby="lo-tab-donate" hidden>
+            <div class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>livingoutside.org/donate</span></div>
+              <div class="browser__view browser__view--tall" tabindex="0" role="region" aria-label="Donate page. Scroll to see the full page."><img src="../assets/lo/donate.webp" alt="Donate page: Fund the next chapter, where your gift goes, how your gift builds chapters, press mentions, and giving in someone’s honor" loading="lazy"></div></div>
+            <p class="siteview__note">Donation framed as funding the next chapter, with where the money goes shown before the ask.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="takeaway" id="takeaway" aria-labelledby="h-take"><div class="takeaway__inner">
+      <p class="chapter__label"><span>07</span> Takeaway</p>
+      <h2 id="h-take" class="reveal">Where it succeeds: the moment before someone decides to help.</h2>
+      <p class="reveal">Most visitors arrive already wanting to do something; the old site made them work to find out what. If the redesign succeeds, a teenager finds the chapter application in two clicks, a busy adult finds a Saturday event without digging, and a donor sees what a gift becomes before being asked for one. The larger question is still open. How might Living Outside turn a simple act of giving into an opportunity for meaningful human connection? A website cannot hand anyone a care bag; it can make the person holding one feel ready to start the conversation.</p>
+      <div class="impact">
+        <div class="reveal"><h3>For volunteers</h3><p>Clear paths by goal, and less uncertainty about how to approach someone respectfully.</p></div>
+        <div class="reveal"><h3>For the organization</h3><p>A site the founders can point to proudly, and fewer lost visitors between interest and action.</p></div>
+        <div class="reveal"><h3>What’s next</h3><p>A “How do you want to help?” entry, a “5 minutes before you go” guide for first-timers, and a post-event reflection that measures social impact, not just bags.</p></div>
+      </div>
+    </div>
+    </section>
+
+    <nav class="pager" aria-label="Project navigation">
+      <a href="../more.html"><small>Back</small><span class="arrow arrow--l" aria-hidden="true">←</span> More projects</a>
+      <a class="pager__next" href="pocket-sauce.html"><small>Next</small>Pocket Sauce <span class="arrow arrow--r" aria-hidden="true">→</span></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+    <span>© <span data-year>2026</span> Dominic Park</span>
+    <nav aria-label="Contact">
+      <a class="link" href="mailto:dominic.park.j@gmail.com">Gmail</a>
+      <a class="link" href="https://www.linkedin.com/in/dominic-park-b2a814282/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="link" href="../Dominic-Park-Resume.pdf" target="_blank" rel="noopener">Resume<span class="sr-only"> (PDF, opens in a new tab)</span></a>
+    </nav>
+    </div>
+  </footer>
+  <script src="../js/main.js?v=10"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Providence Promise — Dominic Park</title>
+  <meta name="description" content="A parent app for Providence Promise's college-savings and incentive program. UX research, information architecture, and usability testing with Design for America.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=10">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="link" href="../index.html">Dominic Park</a>
+      <p class="site-header__center">[UX Research, Mobile App, Usability Testing]</p>
+      <nav class="site-header__right" aria-label="Page">
+        <a class="link" href="../index.html"><span class="arrow arrow--l" aria-hidden="true">←</span> Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="cs-hero">
+      <h1 class="cs-hero__title reveal">Providence Promise</h1>
+      <p class="cs-hero__lede reveal">One place for families to track what they’ve earned toward their child’s college savings, instead of five.</p>
+      <figure class="cs-hero__media reveal">
+        <img class="cover" src="../assets/pp/hero-volunteering.jpg" alt="In a community classroom where students do homework with a volunteer, a hand holds a phone open to the Providence Promise home screen: Welcome Back, Alexia, with 12 registered events, 8 incentive submissions, $300 earned, and upcoming special events">
+      </figure>
+    </section>
+
+    <dl class="facts reveal">
+      <div><dt>Role</dt><dd>UX Designer: partner research and the Incentives flow</dd></div>
+      <div><dt>Duration</dt><dd>2 semesters (Oct 2025 – Apr 2026)</dd></div>
+      <div><dt>Team</dt><dd>6 designers, Design for America (Brown/RISD)</dd></div>
+      <div><dt>Tools</dt><dd>Figma, FigJam, Figma Make</dd></div>
+    </dl>
+
+    <nav class="toc" aria-label="On this page"><div class="toc__inner">
+      <a class="link" href="#problem">Problem</a>
+      <a class="link" href="#research">Research</a>
+      <a class="link" href="#pain">User pain points</a>
+      <a class="link" href="#design">Design</a>
+      <a class="link" href="#testing">Testing</a>
+      <a class="link" href="#results">Final design</a>
+      <a class="link" href="#system">Design system</a>
+      <a class="link" href="#takeaway">Takeaway</a>
+    </div>
+    </nav>
+
+    <section class="chapter" id="problem" aria-labelledby="h-problem">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>01</span> The problem</p>
+        <h2 id="h-problem">The program worked. Everything around it didn’t.</h2>
+        <p>Providence Promise opens a 529 college-savings account for every child in Providence’s public and charter schools, then adds money when families show up: good attendance, workshops, parent-teacher meetings. A family can earn up to about <strong>$250 a month</strong>.</p>
+        <p>The money was real; the path to it was scattered. Updates arrived through WhatsApp, email, texts, phone calls, and paper mail, and every activity had to be photographed and sent in by hand. The partner put it plainly: <strong>too many apps are being used.</strong></p>
+        <p>I researched Providence Promise as one of three candidate partners, and the team chose it because the need was concrete and the people were reachable.</p>
+      </div>
+      <div class="chapter__media">
+        <div class="stats reveal">
+          <div class="stat"><b>700</b><span>families enrolled</span></div>
+          <div class="stat"><b>1,200</b><span>children with savings accounts</span></div>
+          <div class="stat"><b>6</b><span>staff running the program</span></div>
+          <div class="stat"><b>5+</b><span>channels families had to check</span></div>
+        </div>
+        <figure class="frame reveal" style="padding:clamp(24px,5vw,64px);background:#fff;border:1px solid var(--rule)">
+          <img src="../assets/pp/providence-wordmark-hero.png" alt="Providence Promise wordmark: A path to higher education" loading="lazy" style="max-width:520px;margin:0 auto">
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="research" aria-labelledby="h-research">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>02</span> Research</p>
+        <h2 id="h-research">We listened before we sketched.</h2>
+        <p>Weekly meetings with the program’s administrators set our constraints; interviews with parents set our priorities. We wrote every parent comment onto a sticky note, <strong>36 in all</strong>, then grouped and ranked them until three themes held: communication is scattered, the app has to be simple for everyone, and logging and reminders keep failing.</p>
+        <p>We also studied how Eventbrite, POINT, The Knot, Chase, and Delta handle events, sign-in, and progress, so that the patterns parents would meet in our app were ones they already trusted.</p>
+      </div>
+      <div class="chapter__media">
+        <div class="quotes">
+          <blockquote class="quote reveal">“We need one central place for PVD Promise information.”<cite>Parent interview</cite></blockquote>
+          <blockquote class="quote reveal">“It’s difficult—I always forget to submit incentives.”<cite>Parent interview</cite></blockquote>
+          <blockquote class="quote reveal">“Only about 40 parents are active in the WhatsApp group.”<cite>Parent interview</cite></blockquote>
+          <blockquote class="quote reveal">“We’ve been wanting an app—it was just too expensive before.”<cite>Parent interview</cite></blockquote>
+        </div>
+        <figure class="reveal">
+          <img class="frame frame--line" src="../assets/live/pp-4.webp" alt="Affinity map summary: communication pain points, incentive submission pain points, event and workshop needs, and 529 savings account access" loading="lazy" data-zoom>
+          <figcaption>What we heard from parents, sorted into four pain-point groups.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="pain" aria-labelledby="h-pain">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>03</span> User pain points</p>
+        <h2 id="h-pain">The hardest part wasn’t earning. It was remembering.</h2>
+        <p>Forgetting was not a character flaw; it was what happens when a system asks busy parents to hold everything in their heads. Photos filled up phone storage, forms asked for the same details every month, and nobody could see a record of what they had already sent.</p>
+        <p>Two personas kept us honest. <strong>Aleisa</strong>, a working mother of two who prefers Spanish, needed reminders and a history she could trust. <strong>Rachel</strong>, a program coordinator, needed fewer repeated questions and submissions she could actually process.</p>
+      </div>
+      <div class="chapter__media">
+        <ul class="findings reveal" aria-label="Pain points">
+          <li>Information spread across WhatsApp, texts, calls, and email; updates get missed.</li>
+          <li>Monthly incentive submissions are easy to forget.</li>
+          <li>Photo proof fills phone storage and has to be re-sent.</li>
+          <li>No child profiles, so families re-enter the same information.</li>
+          <li>No record of what was submitted versus what the program added.</li>
+          <li>Parents can’t tell whether anyone else is going to an event.</li>
+        </ul>
+        <div class="grid-2 reveal">
+          <figure><img class="frame frame--line" src="../assets/pp/slide-persona-1.jpg" alt="Persona: Alesia, the caring but busy parent, 43, retail salesperson in Providence, with behaviors, goals, and challenges" loading="lazy" data-zoom></figure>
+          <figure><img class="frame frame--line" src="../assets/pp/slide-persona-2.jpg" alt="Persona: Rachel, the dedicated director, 32, with behaviors, goals, and challenges" loading="lazy" data-zoom></figure>
+        </div>
+        <figure class="reveal">
+          <img class="frame frame--line" src="../assets/live/pp-5.webp" alt="What parents want in a new platform: centralized communication, access to savings information, streamlined incentives, and additional features" loading="lazy" data-zoom>
+          <figcaption>What parents asked for, in their words, before we drew a single screen.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="design" aria-labelledby="h-design">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>04</span> Design response</p>
+        <h2 id="h-design">Four tabs, each answering one question.</h2>
+        <p>We built the app around what a parent comes to do: <strong>Home</strong> (what’s next?), <strong>Incentive</strong> (what did I earn?), <strong>Events</strong> (where should we be?), and <strong>Profile</strong> (who’s in my family?). Each of us took one branch of the sitemap from sketch to high fidelity; mine was the Incentives Tracker, where the app’s central promise lives.</p>
+        <p>Every major feature traces back to something a parent or coordinator told us.</p>
+      </div>
+      <div class="chapter__media">
+        <ul class="map-list reveal" aria-label="Research finding mapped to feature">
+          <li><span class="from">“We need one central place”</span><span class="via" aria-hidden="true">→</span><span class="to">Home dashboard with resources and newsletter</span></li>
+          <li><span class="from">“I want to log things immediately”</span><span class="via" aria-hidden="true">→</span><span class="to">Add Incentives on Home, drafts, Submit All</span></li>
+          <li><span class="from">“Submit incentives for each child separately”</span><span class="via" aria-hidden="true">→</span><span class="to">Student switching and per-child tagging</span></li>
+          <li><span class="from">“A record of what I submitted”</span><span class="via" aria-hidden="true">→</span><span class="to">Approved, Pending, Rejected, and Total Earned</span></li>
+          <li><span class="from">Inconsistent submissions (staff)</span><span class="via" aria-hidden="true">→</span><span class="to">Photo guidance and Administrator Notes</span></li>
+          <li><span class="from">“Seeing how many signed up motivates me”</span><span class="via" aria-hidden="true">→</span><span class="to">“85 registered” on every event card</span></li>
+          <li><span class="from">“Fewer steps for logging in” (staff)</span><span class="via" aria-hidden="true">→</span><span class="to">Access-code sign-up and English/Español toggle</span></li>
+        </ul>
+        <figure class="reveal">
+          <img class="frame frame--line" src="../assets/pp/information-architecture-diagram.png" alt="Sitemap: Login leads to Dashboard, Goal Setting, Incentives Tracker, Events, and Account Settings, each with sub-pages" loading="lazy" data-zoom>
+          <figcaption>Information architecture. Each teammate owned one top-level branch.</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img class="frame" src="../assets/pp/midfi.jpg" alt="Medium-fidelity grayscale wireframes of the Home, Incentives, Events, and Profile screens" loading="lazy" data-zoom>
+          <figcaption>Mid-fidelity wireframes: the four tabs before color, photography, and real content.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="testing" aria-labelledby="h-testing">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>05</span> Usability testing</p>
+        <h2 id="h-testing">Parents finished the tasks, but they hesitated in the same places.</h2>
+        <p>We ran task-based sessions across Home, Events, Incentives, and sign-up: register a child for an event, submit an incentive for one of two children, find how much the family has earned so far. Nobody got lost; the pauses told us more than the completions did.</p>
+        <p>One pause mattered most. Two “All” buttons on the Incentives screen, one for students and one for status, left parents unsure which filter they were touching.</p>
+      </div>
+      <div class="chapter__media">
+        <ul class="findings reveal" aria-label="Changes made after testing">
+          <li><strong>Unclear limits and progress.</strong> Added incentive progress and caps to the summary.</li>
+          <li><strong>High-friction submission.</strong> Multi-incentive form with Save Draft and Submit All.</li>
+          <li><strong>Events lacked context.</strong> Summary cards with reward, time, place, audience, and headcount.</li>
+          <li><strong>Who is attending?</strong> Registration now asks which student, how many children, and whether a guardian is coming.</li>
+          <li><strong>Weak status feedback.</strong> Rejected items show the reason right in the list.</li>
+          <li><strong>Multi-child households.</strong> Student switching on Home, Incentives, and Profile.</li>
+        </ul>
+        <div class="screens reveal">
+          <figure><div class="screen"><img src="../assets/pp/ui-incentives.webp" alt="Incentives screen: $10 total earned, 2 approved and 1 pending, filter tabs, and an administrator note asking for a clearer photo" loading="lazy" data-zoom></div><figcaption>Status and the reason for a rejection, in one list.</figcaption></figure>
+          <figure><div class="screen"><img src="../assets/pp/ui-add.webp" alt="Add Incentives form with type, student, notes, Add Another Incentive, and photo upload" loading="lazy" data-zoom></div><figcaption>Log several activities at once.</figcaption></figure>
+          <figure><div class="screen"><img src="../assets/pp/ui-register.webp" alt="Register for Event sheet asking which student is attending, how many children, whether a guardian is attending, with a registration summary" loading="lazy" data-zoom></div><figcaption>Registration answers “who is going?”</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter chapter--solo" id="results" aria-labelledby="h-results">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>06</span> Final design</p>
+        <h2 id="h-results">An app that remembers, so parents don’t have to.</h2>
+        <p>A parent opens the app, sees what’s coming, and logs an activity in the moment it happens, tagged to the right child. Declined submissions explain themselves. Events show who else is going. Sign-up starts with a language choice, English or Español, and an access code from the program.</p>
+      </div>
+      <div class="chapter__media">
+        <figure class="reveal">
+          <img class="frame" src="../assets/pp/final-lineup.jpg" alt="The five final screens side by side in phone frames: Welcome, Home, Incentives, Events, and Profile" data-zoom>
+        </figure>
+        <div class="screens screens--4 reveal">
+          <figure><div class="screen"><img src="../assets/pp/ui-login.webp" alt="Welcome screen with the Providence Promise logo, an English and Español toggle, Create Account, and Log In" loading="lazy" data-zoom></div><figcaption>Welcome: language first.</figcaption></figure>
+          <figure><div class="screen"><img src="../assets/pp/ui-home.webp" alt="Home: Welcome Back, Victoria, with a student switcher, stats, Add Incentives, upcoming special events, and program resources" loading="lazy" data-zoom></div><figcaption>Home: what’s next, and one tap to log.</figcaption></figure>
+          <figure><div class="screen"><img src="../assets/pp/ui-events.webp" alt="Events list with event cards showing photo, reward, date, audience, and number registered" loading="lazy" data-zoom></div><figcaption>Events: reward, audience, and headcount.</figcaption></figure>
+          <figure><div class="screen"><img src="../assets/pp/ui-event-detail.webp" alt="Event details for the Annual 529 Day Celebration with photo, description, time, and location" loading="lazy" data-zoom></div><figcaption>Event details before registering.</figcaption></figure>
+          <figure><div class="screen"><img src="../assets/pp/ui-incentives.webp" alt="Incentives screen with total earned, approved and pending counts, and submissions" loading="lazy" data-zoom></div><figcaption>Incentives: every submission and its status.</figcaption></figure>
+          <figure><div class="screen"><img src="../assets/pp/ui-add.webp" alt="Add Incentives form" loading="lazy" data-zoom></div><figcaption>Add Incentives.</figcaption></figure>
+          <figure><div class="screen"><img src="../assets/pp/ui-register.webp" alt="Register for Event sheet" loading="lazy" data-zoom></div><figcaption>Register for an event.</figcaption></figure>
+          <figure><div class="screen"><img src="../assets/pp/ui-profile.webp" alt="Profile with the parent, a student with a Link 529 Account prompt, Add Another Student, and account settings" loading="lazy" data-zoom></div><figcaption>Profile: students and their 529 accounts.</figcaption></figure>
+        </div>
+        <div class="grid-2 reveal" style="align-items:center">
+          <div class="screen-stage">
+            <div class="screen video-wrap">
+              <video src="../assets/pp/prototype.mp4" poster="../assets/pp/ui-home.webp" muted loop playsinline preload="metadata" aria-label="Screen recording of the prototype: moving from Home to Incentives, adding two incentives, browsing events, and viewing the profile"></video>
+              <button class="video-toggle" type="button">Play</button>
+            </div>
+          </div>
+          <div>
+            <p class="chapter__label">Prototype walkthrough</p>
+            <p style="color:var(--ink-2);max-width:40ch">Recorded from the interactive Figma Make build we used for usability testing: Home to Incentives, two incentives submitted at once, then Events and Profile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="system" aria-labelledby="h-system">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>07</span> Design system</p>
+        <h2 id="h-system">One shared language for six designers.</h2>
+        <p>Each of us designed a different tab, often asynchronously, so a small design system did the coordinating: one red, a warm cream, a neutral grayscale, and SF Pro Rounded from 28pt headings down to 12pt body. It kept the four tabs feeling like one app, and it made Figma approachable for teammates with less design experience.</p>
+        <p>We presented the prototype to Providence Promise at our spring final critique, with feature priorities and documentation prepared for developer handoff as the next step.</p>
+      </div>
+      <div class="chapter__media">
+        <figure class="reveal"><img class="frame frame--line" src="../assets/pp/ds-color.webp" alt="Color palette: red #A80F18, cream #FFF4E5, brown #623838, and a grayscale from #1A1D21 to #F9F9F9" loading="lazy" data-zoom></figure>
+        <figure class="reveal"><img class="frame frame--line" src="../assets/pp/ds-type.webp" alt="Typography: SF Pro Rounded, Heading 1 Bold 28pt through Body 2 Regular 12pt" loading="lazy" data-zoom></figure>
+      </div>
+    </section>
+
+    <section class="takeaway" id="takeaway" aria-labelledby="h-take"><div class="takeaway__inner">
+      <p class="chapter__label"><span>08</span> Takeaway</p>
+      <h2 id="h-take" class="reveal">Where it succeeds: the parents who were falling behind.</h2>
+      <p class="reveal">The WhatsApp group reached about 40 parents; the program serves 700 families. The distance between those two numbers is where this app does its real work. A parent who logs an activity the moment it happens is a parent who gets credited for it, and every dollar that arrives on time keeps growing in a child’s college fund. Is an app the whole answer to college access? No; but a single record a family can trust is what has to exist before they can believe the program is working for them.</p>
+      <div class="impact">
+        <div class="reveal"><h3>For families</h3><p>Fewer missed incentives, one record per child, and events they can see other parents attending.</p></div>
+        <div class="reveal"><h3>For the six-person staff</h3><p>Standard submissions, rejection notes that explain themselves, and fewer repeated questions answered by hand.</p></div>
+        <div class="reveal"><h3>What I learned</h3><p>Designing for a wide range of users means removing, not adding. Whenever a stakeholder constraint and a parent’s need pulled apart, the parent’s need decided the flow.</p></div>
+      </div>
+    </div>
+    </section>
+
+    <nav class="pager" aria-label="Project navigation">
+      <a href="../index.html"><small>Back</small><span class="arrow arrow--l" aria-hidden="true">←</span> All work</a>
+      <a class="pager__next" href="bodega-cats.html"><small>Next</small>Not Only for Bodega Cats <span class="arrow arrow--r" aria-hidden="true">→</span></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+    <span>© <span data-year>2026</span> Dominic Park</span>
+    <nav aria-label="Contact">
+      <a class="link" href="mailto:dominic.park.j@gmail.com">Gmail</a>
+      <a class="link" href="https://www.linkedin.com/in/dominic-park-b2a814282/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="link" href="../Dominic-Park-Resume.pdf" target="_blank" rel="noopener">Resume<span class="sr-only"> (PDF, opens in a new tab)</span></a>
+    </nav>
+    </div>
+  </footer>
+  <script src="../js/main.js?v=10"></script>
+</body>
+</html>
