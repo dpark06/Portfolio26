@@ -733,3 +733,10 @@ figcaption { font-size: 13px; color: var(--ink-3); margin-top: 8px; }
   .ask-home { transform: none; opacity: 1; }
 }
 @media print { .ask-fab, .ask-space, #ask-hero { display: none !important; } }
+
+/* Type specimen grids (Moving [Type] Face) */
+.type-set { display: grid; gap: clamp(4px, .8vw, 10px); background: #fff; padding: clamp(12px, 2vw, 24px); border-radius: var(--radius); border: 1px solid var(--rule); }
+.type-set img { width: 100%; height: auto; display: block; }
+.type-set--7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.type-set--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+@media (max-width: 699px) { .type-set--7 { grid-template-columns: repeat(5, minmax(0, 1fr)); } }

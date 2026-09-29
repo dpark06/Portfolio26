@@ -10,11 +10,19 @@ window.ASK_KB = [
     a: ['Hi! Ask me anything about Dominic’s projects, skills, experience, or resume. Answers come only from the portfolio and resume.'],
     s: [], f: ['Who is Dominic?', 'What UX research has Dominic done?', 'Show me the projects'] },
 
-  { id: 'about', k: ['who', '"who is"', 'about', 'introduce', 'summary', 'background', 'bio', 'tell me about dominic'],
-    a: ['Dominic Park is a junior at the Rhode Island School of Design studying Graphic Design (BFA, expected May 2028) with a minor in Computation and Psychology.',
-        'Dominic focuses on UX: research, interface and interaction design, and brand systems, and has designed for Cheil USA (Samsung), Providence Promise, Living Outside, and Girl Scouts.'],
+  { id: 'name', k: ['name', 'full name', 'called', 'what should i call', 'pronounce'],
+    a: ['His name is Dominic Park.',
+        'He’s a junior at the Rhode Island School of Design studying Graphic Design, with a minor in Computation and Psychology, and he designs UX, interfaces, and brand systems.'],
+    s: [['About', 'about.html']],
+    f: ['Who is Dominic?', 'What does Dominic do best?', 'How do I contact Dominic?'] },
+
+  { id: 'about', k: ['who', '"who is"', 'about', 'introduce', 'introduction', 'yourself', 'himself', 'summary', 'background', 'bio', 'tell me about dominic', 'personality', 'hobby', 'hobbies', 'outside of design', 'outside of work', 'fun fact', 'person'],
+    a: ['From his About page: Dominic Park is a junior at the Rhode Island School of Design studying Graphic Design, with a minor in Computation and Psychology.',
+        'That combination is how he approaches UX: graphic design gives him form, computation gives him systems, and psychology gives him the reason behind both.',
+        'His work moves between interface design, brand systems, and campaigns, and it usually starts in the same place: talking to the people it’s for, then designing the thing that removes what’s in their way.',
+        'Most recently he was a Design Intern at Cheil USA working on Samsung, and he volunteers as a UX designer for Providence Promise and Living Outside. Outside of screens, he draws characters and builds them in 3D.'],
     s: [['About', 'about.html'], ['Resume (PDF)', 'Dominic-Park-Resume.pdf']],
-    f: ['What UX research has Dominic done?', 'What did Dominic do at Cheil USA?', 'How do I contact Dominic?'] },
+    f: ['What does Dominic do best?', 'What is Dominic’s design process?', 'How do I contact Dominic?'] },
 
   { id: 'education', k: ['school', 'education', 'study', 'studying', 'major', 'minor', 'degree', 'bfa', 'risd', 'brown', 'gpa', 'graduate', 'graduation', 'class of', 'year', 'college', 'university', 'coursework', 'honors'],
     a: ['• Rhode Island School of Design: BFA in Graphic Design, Aug 2024 – May 2028, GPA 3.95, with a minor in Computation and Psychology.',
