@@ -78,7 +78,7 @@ window.ASK_KB = [
 
   { id: 'delta', ent: true, proj: 'Cheil Delta', k: ['cheil delta', 'delta', 'agent', 'ai agent', 'ai tool', 'comparison deck', 'review deck', 'deck', 'decks', 'powerpoint', 'ollama', 'next.js', 'nextjs', 'typescript', 'postgresql', 'claude code', 'pipeline', 'built an app', 'coded'],
     a: ['Cheil Delta is an internal AI tool Dominic built at Cheil USA. It compares two versions of a creative file (PDF, PNG, or JPEG), detects every change with a deterministic diff engine, has AI explain each change in plain language, and builds a branded PowerPoint review deck only after a person confirms or corrects every finding.',
-        'It turned a roughly 45-minute deck-building task into a few minutes. The AI runs as four bounded stages (classifier, explainer, relationship mapper, deck planner), works with Claude, OpenAI, or a free local model through Ollama, and never writes the file itself.',
+        'It took about 3 days to build and turned a roughly 45-minute deck-building task into 10 minutes. The AI runs as four bounded stages (classifier, explainer, relationship mapper, deck planner), works with Claude, OpenAI, or a free local model through Ollama, and never writes the file itself.',
         'Its biggest lesson: reviewer edits are enforced in code, not just requested in a prompt, because a prompt is a request, not a guarantee.'],
     s: [['Cheil Delta case study', 'work/cheil-delta.html'], ['Demo video', 'https://www.youtube.com/watch?v=36q8zA4btEg']],
     f: ['How did Cheil Delta come to life?', 'What was the biggest challenge in Cheil Delta?', 'What did Dominic do at Cheil USA?'] },
@@ -224,7 +224,7 @@ window.ASK_KB = [
 
   { id: 'ai', k: ['ai', 'artificial intelligence', 'agent', 'research assistant', 'philosophy', 'podcast'],
     a: ['Two AI-related items on the resume:',
-        '• At Cheil USA, Dominic built Cheil Delta, an AI tool that compares two versions of a file, explains each change, and builds the review deck after a person confirms it, cutting a 45-minute task to a few minutes.',
+        '• At Cheil USA, Dominic built Cheil Delta, an AI tool that compares two versions of a file, explains each change, and builds the review deck after a person confirms it, cutting deck production from 45 to 10 minutes.',
         '• As an AI Philosophy Research Assistant (Jun – Sept 2025), Dominic studied how an AI-generated podcast tool represents speaker identity.'],
     s: [['Resume (PDF)', 'Dominic-Park-Resume.pdf']], f: ['What did Dominic do at Cheil USA?'] },
 
