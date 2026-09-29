@@ -202,3 +202,15 @@
   });
   sync();
 })();
+
+/* Looping decorative videos stop when the visitor prefers reduced motion */
+(function () {
+  var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function apply() {
+    document.querySelectorAll('video[data-motion]').forEach(function (v) {
+      if (mq.matches) { v.pause(); v.removeAttribute('autoplay'); } else if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    });
+  }
+  apply();
+  if (mq.addEventListener) mq.addEventListener('change', apply);
+})();

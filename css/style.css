@@ -884,3 +884,6 @@ html[data-theme="dark"] .pipeline__tag--ai { color: #b3a8ff; border-color: rgba(
   .pipeline__tag { grid-row: auto; }
   .pipeline li + li::before { left: 28px; }
 }
+.stage__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Screenshots captured at 800 px: never stretch them far past their real size */
+.browser--native { max-width: 880px; margin: 0 auto; }

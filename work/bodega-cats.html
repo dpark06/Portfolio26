@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..600&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=22">
+  <link rel="stylesheet" href="../css/style.css?v=23">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -40,10 +40,7 @@
       <p class="cs-hero__lede reveal">A record of how people think while they walk through a convenience store, made public as a can of cat food and a website that lets anyone add their own reading.</p>
       <figure class="cs-hero__media cs-hero__media--stage reveal">
         <div class="stage stage--bodega">
-          <picture>
-            <source srcset="../assets/bodega/cans-still.webp" media="(prefers-reduced-motion: reduce)">
-            <img class="contain" src="../assets/bodega/cans-spin.webp" alt="Three stacked cat food cans wrapped in a blue collage label, spinning slowly on a bright blue field. Rendered from my Blender file.">
-          </picture>
+          <video class="stage__video" src="../assets/bodega/cans-spin.mp4" poster="../assets/bodega/cans-still.webp?v=2" autoplay muted loop playsinline preload="metadata" aria-label="Three stacked cat food cans wrapped in a blue collage label, spinning slowly on a bright blue field. Rendered from my Blender file." data-motion></video>
         </div>
       </figure>
     </section>
@@ -242,10 +239,10 @@
     </nav>
     </div>
   </footer>
-  <script src="../js/main.js?v=22"></script>
-  <script src="../js/assistant-kb.js?v=22"></script>
-  <script src="../js/assistant-index.js?v=22"></script>
-  <script src="../js/assistant.js?v=22"></script>
+  <script src="../js/main.js?v=23"></script>
+  <script src="../js/assistant-kb.js?v=23"></script>
+  <script src="../js/assistant-index.js?v=23"></script>
+  <script src="../js/assistant.js?v=23"></script>
   <script>
     // Mini version of the live site's interaction: choose a photo, stamp a symbol.
     (function () {
