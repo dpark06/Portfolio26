@@ -126,7 +126,40 @@
     };
   }
 
+  function overviewOf(proj) { return INDEX.filter(function (d) { return d.t === 'Overview' && d.p === proj; })[0]; }
+  function factOf(d, key) { var m = (d && d.f || '').split('; ').filter(function (p) { return p.indexOf(key + ':') === 0; })[0]; return m ? m.slice(key.length + 1).trim() : ''; }
+  var TIME = /\s(how long|how much time|how many weeks|how quickly|how fast|duration|timeline|turnaround|weeks? (did|does|to)|time (did|does|to|it)|take to (finish|design|make|complete))\s/;
+  function timeAnswer(proj) {
+    if (proj) {
+      var d = overviewOf(proj), dur = factOf(d, 'Duration');
+      if (dur) return { paras: [/present/.test(dur) ? proj + ' is ongoing: ' + dur + '.' : proj + ' took ' + dur.replace(/^About/, 'about') + '.', 'Team: ' + factOf(d, 'Team') + '.'], sources: [[proj, d.h]], follow: ['How long do Dominic’s projects take?', 'How did ' + proj + ' come to life?'] };
+    }
+    var rows = INDEX.filter(function (d) { return d.t === 'Overview' && factOf(d, 'Duration'); });
+    return {
+      paras: ['It depends on the project. Dominic’s own projects usually take one to three weeks from research to finished design; team and client work runs longer, on the partner’s schedule.']
+        .concat(rows.map(function (d) { return '• ' + d.p + ': ' + factOf(d, 'Duration') + ' (' + factOf(d, 'Team').split(/[,:]/)[0] + ')'; })),
+      sources: [['All work', 'index.html#work']],
+      follow: ['What is Dominic’s design process?', 'Which projects were team projects?']
+    };
+  }
+  // "How did Mr. Zeno come to life?" → the case study's own chapters, in order.
+  var STORY = /\s(come to life|came to life|process|workflow|story|journey|steps|made|built|develop|developed|start to finish|walk me through)\s/;
+  function storyAnswer(proj) {
+    var ch = INDEX.filter(function (d) { return d.p === proj && d.t && d.t !== 'Overview' && d.hd; });
+    if (!ch.length) return null;
+    return {
+      paras: ['How ' + proj + ' came together, chapter by chapter:'].concat(ch.map(function (d) { return '• ' + d.t + ': ' + d.hd; })),
+      sources: [[proj + ' case study', ch[0].h.split('#')[0]]],
+      follow: ['What is Dominic’s design process?', 'How long did ' + proj + ' take?']
+    };
+  }
+
   function answer(q) {
+    var nq0 = norm(q), named = scoreKB(q);
+    var proj = named && named.sc >= 2 && named.e.proj ? named.e.proj
+             : HERE && (/\s(this|here|it)\s/.test(nq0) || !(named && named.sc >= 1)) ? HERE.proj : null;
+    if (TIME.test(nq0)) return timeAnswer(named && named.sc >= 2 && named.e.proj ? named.e.proj : HERE && /\s(this|here|it)\s/.test(nq0) ? HERE.proj : null);
+    if (proj && STORY.test(nq0) && !/\s(dominic|dominic's|his|he)\s(design\s)?(process|workflow)\s/.test(nq0)) { var st = storyAnswer(proj); if (st) return st; }
     var topic = topicFor(q);
     if (topic && !/\s(this|that)\s(project|page|case study|one)\s/.test(norm(q)) && (CROSS.test(norm(q)) || topic.label === '3D' && !HERE)) { var cp = crossProject(q, topic); if (cp) return cp; }
     var hit = scoreKB(q), qt = tokens(q);

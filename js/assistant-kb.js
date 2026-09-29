@@ -213,9 +213,38 @@ window.ASK_KB = [
         '• As an AI Philosophy Research Assistant (Jun – Sept 2025), Dominic studied how an AI-generated podcast tool represents speaker identity.'],
     s: [['Resume (PDF)', 'Dominic-Park-Resume.pdf']], f: ['What did Dominic do at Cheil USA?'] },
 
-  { id: 'process', k: ['process', 'approach', 'how does dominic design', 'method', 'methods', 'philosophy', 'why hire', 'strengths', 'fit'],
-    a: ['Dominic’s process, in the portfolio’s words, starts with listening: talk to users, find where the experience breaks, then design the interface, system, or campaign that makes the next step obvious.',
-        'You can see it in Providence Promise (interviews → personas → testing → changes) and Head in the Clouds (fan research → information architecture).'],
-    s: [['Home', 'index.html'], ['Providence Promise', 'work/providence-promise.html']],
-    f: ['What UX research has Dominic done?', 'How do I contact Dominic?'] }
+  { id: 'process', k: ['process', 'workflow', 'work flow', 'approach', 'method', 'methods', 'pattern', 'patterns', 'steps', 'how does he design', 'how does he work', 'how does dominic design', 'how does dominic work', 'design process', 'from idea', 'come to life', 'came to life', 'sketch', 'sketchbook', 'ideate', 'ideation'],
+    a: ['Dominic’s work follows the same pattern from project to project:',
+        '• Listen first. He starts by reading what people already say online, like Reddit threads and reviews, and by talking to people directly, so the pain points come with a human side instead of just a list.',
+        '• Sketch it out. The ideas take shape by hand in his sketchbook, where he can think loosely before anything is fixed.',
+        '• Bring it into digital. The strongest sketches move into Figma (or Illustrator, Cinema 4D, Blender), where they become screens, systems, and prototypes.',
+        '• Test and adjust. Whenever he can, he puts the design in front of real people and changes what makes them hesitate.',
+        'Do you want the general picture, or how one specific project came to life?'],
+    s: [['Providence Promise: research', 'work/providence-promise.html#research'], ['Head in the Clouds: research', 'work/head-in-the-clouds.html#research']],
+    f: ['How did Providence Promise come to life?', 'How did Head in the Clouds come to life?', 'How did Mr. Zeno come to life?', 'How did Bodega Cats come to life?'] },
+
+  { id: 'strengths', k: ['best', 'good at', 'strength', 'strengths', 'strongest', 'excel', 'excels', 'abilities', 'ability', 'skilled', 'talent', 'why hire', 'fit', 'bring to', 'stand out', 'teamwork', 'collaborate', 'collaboration', 'working with others', 'work with others', 'team player'],
+    a: ['What Dominic does best is user research: listening to people, finding where an experience breaks for them, and turning that into a design that feels obvious to use.',
+        '• Research: 36 parent quotes affinity-mapped for Providence Promise; festival reviews and Reddit threads mapped into fan pain points for Head in the Clouds; co-founder interviews and six personas for Living Outside.',
+        '• Working with others: a six-designer Design for America team sharing one design system, a four-intern team at Cheil USA where he art directed two client-approved concepts, and three volunteer designers at Living Outside.',
+        '• Craft: a graphic design background (RISD, 3.95 GPA) that carries the research into clear interfaces, brands, and visuals.'],
+    s: [['Providence Promise: research', 'work/providence-promise.html#research'], ['Cheil USA', 'work/cheil.html'], ['About', 'about.html']],
+    f: ['What is Dominic’s design process?', 'Which projects were team projects?', 'Why does Dominic like to design?'] },
+
+  { id: 'why', k: ['like to design', 'why design', 'why does he design', 'why does dominic design', 'why ux', 'motivation', 'motivate', 'motivates', 'motivated', 'passion', 'passionate', 'inspire', 'inspires', 'inspiration', 'purpose', 'success', 'goal', 'goals', 'drive', 'drives', 'care about', 'cares about', 'values', 'mission'],
+    a: ['Dominic comes to UX from graphic design. He wants to use that background together with what he enjoys most, working with people, to make things that real users rely on to make their lives a little easier.',
+        'Providence Promise is the clearest example: an app built around parents who kept forgetting to log the activities that earn their children college savings.',
+        'Making something beautiful for the world is its own kind of success for him too, which is why the visual craft never drops out of the UX work.'],
+    s: [['About', 'about.html'], ['Providence Promise', 'work/providence-promise.html']],
+    f: ['What does Dominic enjoy in his designs?', 'What does Dominic do best?', 'What is Dominic’s design process?'] },
+
+  { id: 'enjoy', k: ['enjoy', 'enjoys', 'fun', 'favorite part', 'love about', 'loves', 'like about', 'excite', 'excites', 'excited', 'interest', 'interests', 'interested', 'curious', 'learn', 'learning', 'new things', 'experiment', 'humanity'],
+    a: ['Dominic enjoys learning and trying new things, especially when other people’s ideas push the work somewhere he wouldn’t have gone alone.',
+        '• Bodega Cats took a graphic design brief into new mediums: cans modeled in Blender and a website coded in HTML, CSS, and JavaScript.',
+        '• At Cheil USA he built an AI agent on Samsung’s brand system that cut deck production from 45 to 10 minutes.',
+        '• On Providence Promise, each of six designers owned a different tab, and one shared design system tied their ideas together.',
+        'Underneath all of it, he likes to design for people; for humanity, in his words.'],
+    s: [['Bodega Cats', 'work/bodega-cats.html'], ['Cheil USA', 'work/cheil.html'], ['Providence Promise', 'work/providence-promise.html']],
+    f: ['Why does Dominic like to design?', 'Which projects use 3D?', 'What is Dominic’s design process?'] },
+
 ];
