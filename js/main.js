@@ -144,3 +144,61 @@
     el.textContent = new Date().getFullYear();
   });
 })();
+
+/* ---------- Collections switch: UX Design (dark) / Branding (light) ---------- */
+(function () {
+  var root = document.documentElement;
+  var groups = Array.prototype.slice.call(document.querySelectorAll('.view-switch'));
+  if (!groups.length) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var list = document.querySelector('.work-grid');
+
+  function sync() {
+    var v = root.getAttribute('data-view');
+    groups.forEach(function (g) {
+      g.querySelectorAll('[data-view]').forEach(function (b) {
+        var on = b.getAttribute('data-view') === v;
+        b.setAttribute('aria-checked', on ? 'true' : 'false');
+        b.tabIndex = on ? 0 : -1;
+      });
+    });
+  }
+
+  function setView(v, focusGroup) {
+    if (v === root.getAttribute('data-view')) return;
+    root.classList.add('view-anim');
+    root.setAttribute('data-view', v);
+    root.setAttribute('data-theme', v === 'ux' ? 'dark' : 'light');
+    var meta = document.querySelector('meta[name=theme-color]');
+    if (meta) meta.content = v === 'ux' ? '#0d0d10' : '#ffffff';
+    try { localStorage.setItem('dp-view', v); } catch (e) {}
+    try {
+      var url = new URL(location.href);
+      if (v === 'branding') url.searchParams.set('view', 'branding'); else url.searchParams.delete('view');
+      history.replaceState(null, '', url.pathname + url.search + url.hash);
+    } catch (e) {}
+    sync();
+    if (focusGroup) focusGroup.querySelector('[data-view="' + v + '"]').focus();
+    if (list && !reduce) {
+      list.classList.remove('is-swapping'); void list.offsetWidth; list.classList.add('is-swapping');
+      // newly shown cards should be visible even if the scroll-reveal already ran
+      list.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-in'); });
+    }
+    setTimeout(function () { root.classList.remove('view-anim'); }, 500);
+  }
+
+  groups.forEach(function (g) {
+    g.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-view]');
+      if (b) setView(b.getAttribute('data-view'));
+    });
+    g.addEventListener('keydown', function (e) {
+      if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].indexOf(e.key) < 0) return;
+      e.preventDefault();
+      var v = root.getAttribute('data-view');
+      var next = e.key === 'Home' ? 'ux' : e.key === 'End' ? 'branding' : (v === 'ux' ? 'branding' : 'ux');
+      setView(next, g);
+    });
+  });
+  sync();
+})();

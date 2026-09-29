@@ -764,3 +764,86 @@ figcaption { font-size: 13px; color: var(--ink-3); margin-top: 8px; }
 @keyframes tt-blink { 0%, 50% { opacity: 1; } 50.01%, 100% { opacity: 0; } }
 @media (max-width: 699px) { .tester__stage { --glyph: 52px !important; } .tester__size { display: none; } }
 @media (prefers-reduced-motion: reduce) { .tester__stage.is-focus .tester__caret { animation: none; opacity: 1; } }
+
+/* ==========================================================
+   Collections: UX Design (dark) and Branding (light)
+   The <html> element carries data-view="ux|branding" and
+   data-theme="dark|light", set in <head> before first paint.
+   ========================================================== */
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #f4f4f5;
+  --ink-2: #b4b4bb;          /* 9.6:1 on the dark page */
+  --ink-3: #9d9da6;          /* 7.2:1 */
+  --rule: #2a2a30;
+  --paper: #0d0d10;
+  --wash: #16161a;
+  --focus: #8fb0ff;
+}
+html[data-theme="dark"] .site-header { background: rgba(13,13,16,.86); }
+html[data-theme="dark"] .toc { background: rgba(13,13,16,.94); }
+html[data-theme="dark"] .tags li,
+html[data-theme="dark"] .tester__input,
+html[data-theme="dark"] .tester__btn,
+html[data-theme="dark"] .siteview__tab { border-color: #3a3a42; }
+html[data-theme="dark"] .tester__input,
+html[data-theme="dark"] .tester__btn,
+html[data-theme="dark"] .siteview__tab:not([aria-selected="true"]) { background: var(--wash); }
+html[data-theme="dark"] .siteview__tab[aria-selected="true"] { color: var(--paper); }
+html[data-theme="dark"] .btn:focus-visible,
+html[data-theme="dark"] .skip-link { color: var(--paper); }
+@media (hover: hover) and (pointer: fine) { html[data-theme="dark"] .btn:hover { color: var(--paper); } }
+html[data-theme="dark"] .lightbox { background: rgba(13,13,16,.97); }
+html[data-theme="dark"] .lightbox__close { background: var(--wash); }
+html[data-theme="dark"] .ask-bar { background: #18181c; }
+html[data-theme="dark"] .ask-bar input { color: var(--ink); }
+html[data-theme="dark"] .ask-bar input::placeholder { color: var(--ink-3); }
+html[data-theme="dark"] .ask-send { color: var(--paper); }
+html[data-theme="dark"] .ask-bar:has(input:focus-visible) { box-shadow: 0 0 0 4px var(--paper), 0 0 0 6px var(--focus); }
+html[data-theme="dark"] .frame { box-shadow: 0 0 0 1px var(--rule); }
+/* Artwork that lives on white stays on white in the dark theme (type specimens, 3D model, browser mockups). */
+
+/* Show the content for the current collection only */
+html[data-view="ux"] [data-show="branding"],
+html[data-view="branding"] [data-show="ux"] { display: none !important; }
+
+/* Smooth cross-fade when a visitor switches */
+html.view-anim body,
+html.view-anim .site-header,
+html.view-anim .card,
+html.view-anim .tags li { transition: background-color .4s var(--ease), color .4s var(--ease), border-color .4s var(--ease); }
+.work-grid.is-swapping { animation: view-swap .45s var(--ease); }
+@keyframes view-swap { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* The switch */
+.view-pick { margin-top: clamp(24px, 3vw, 36px); }
+.view-pick__label { font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 10px; }
+.view-switch { position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; padding: 5px; border-radius: 999px; background: var(--wash); border: 1px solid var(--rule); isolation: isolate; }
+.view-switch button { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 24px; border: 0; border-radius: 999px; background: none; font: inherit; font-size: 16px; font-weight: 500; color: var(--ink-2); cursor: pointer; white-space: nowrap; transition: color .3s var(--ease); }
+.view-switch button[aria-checked="true"] { color: var(--paper); }
+.view-switch button:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.view-switch__n { font-size: 12.5px; font-weight: 400; opacity: .7; font-variant-numeric: tabular-nums; }
+.view-switch__thumb { position: absolute; z-index: 0; top: 5px; bottom: 5px; left: 5px; width: calc(50% - 5px); border-radius: 999px; background: var(--ink); transition: transform .3s var(--ease), background-color .4s var(--ease); }
+html[data-view="branding"] .view-switch__thumb { transform: translateX(100%); }
+.view-switch--sm { padding: 3px; }
+.view-switch--sm button { min-height: 34px; padding: 0 16px; font-size: 13.5px; }
+.view-switch--sm .view-switch__thumb { top: 3px; bottom: 3px; left: 3px; width: calc(50% - 3px); }
+@media (hover: hover) and (pointer: fine) { .view-switch button[aria-checked="false"]:hover { color: var(--ink); } }
+@media (max-width: 380px) { .view-switch button { padding: 0 16px; font-size: 15px; } }
+@media (prefers-reduced-motion: reduce) {
+  .view-switch__thumb, .view-switch button { transition: none; }
+  .work-grid.is-swapping { animation: none; }
+  html.view-anim body, html.view-anim .site-header, html.view-anim .card, html.view-anim .tags li { transition: none; }
+}
+
+/* Card badge (work in progress / also in the other collection) */
+.card__badge { justify-self: start; width: fit-content; display: inline-flex; margin: 0 0 8px; padding: 3px 10px; border-radius: 999px; background: var(--wash); border: 1px solid var(--rule); font-size: 12px; font-weight: 500; color: var(--ink-2); }
+
+/* Book project */
+.credit { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad) clamp(24px, 3vw, 36px); font-size: 14px; color: var(--ink-3); }
+.credit cite { font-style: italic; }
+.plain-list { margin: 0 0 1em; padding-left: 1.1em; color: var(--ink-2); max-width: 46ch; }
+.plain-list li { margin-bottom: .5em; }
+.plain-list strong { color: var(--ink); font-weight: 500; }
+html[data-theme="dark"] .ask-fab__label { color: var(--paper); }

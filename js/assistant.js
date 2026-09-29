@@ -91,11 +91,11 @@
     { k: ['brand', 'branding', 'identity', 'rebrand'], label: 'branding', lead: 'involve branding or art direction', terms: ['identity', 'brand', 'art direction'] },
     { k: ['web', 'website', 'site', 'web design'], label: 'web', lead: 'include web design', terms: ['website', 'web ui', 'navigation', 'page design'] },
     { k: ['illustration', 'illustrate', 'drawing', 'drawn', 'procreate'], label: 'illustration', lead: 'include illustration', terms: ['illustration', 'procreate'] },
-    { k: ['typography', 'type', 'typeface', 'font', 'lettering'], label: 'type design', lead: 'involve type design', terms: ['type designer', 'typeface'] },
+    { k: ['typography', 'type', 'typeface', 'font', 'lettering', 'typesetting'], label: 'type design', lead: 'involve type design', terms: ['type designer', 'typeface', 'typesetting', 'typography'] },
     { k: ['photo', 'photography', 'camera', 'photoshoot'], label: 'photography', lead: 'include photography', terms: ['photography', 'camera'] },
     { k: ['team', 'teams', 'group', 'collaborat'], label: 'a team', lead: 'were team projects', whole: 'Team', terms: ['designers', 'interns', 'volunteer designers'] },
     { k: ['solo', 'alone', 'by himself', 'independent', 'self-initiated', 'personal'], label: 'solo', lead: 'were solo', whole: 'Team', terms: ['solo'] },
-    { k: ['figma'], label: 'Figma', lead: 'use Figma', terms: ['figma'] }, { k: ['illustrator'], label: 'Illustrator', lead: 'use Illustrator', terms: ['illustrator'] },
+    { k: ['figma'], label: 'Figma', lead: 'use Figma', terms: ['figma'] }, { k: ['indesign', 'editorial', 'book', 'print'], label: 'InDesign', lead: 'use InDesign', terms: ['indesign', 'binding'] }, { k: ['illustrator'], label: 'Illustrator', lead: 'use Illustrator', terms: ['illustrator'] },
     { k: ['photoshop'], label: 'Photoshop', lead: 'use Photoshop', terms: ['photoshop'] }, { k: ['figjam'], label: 'FigJam', lead: 'use FigJam', terms: ['figjam'] }
   ];
   var CROSS = /\s(which|what|any|other|all|how many)\s(of\s)?(his\s|dominic's\s|the\s|your\s)?(other\s)?(projects?|work|case studies|pieces)\s|\sprojects?\s(that|with|use|using|uses|used|include|including|involve|involving|have|has|where)\s|\sany\s.+\s(work|projects?)\s|\sdoes\s.*\s(do|use|know)\s.*\s(work|projects?)\s/;
@@ -248,7 +248,8 @@
   var heroMount = document.getElementById('ask-hero');
   if (heroMount) {
     heroMount.innerHTML = bar('ask-hero-input', 'Ask me anything about my work, skills, or resume…', 'Ask a question about Dominic') +
-      '<p class="ask-hero__try">Try: <button type="button" data-ask-q>What UX research has Dominic done?</button> · <button type="button" data-ask-q>Which tools does Dominic use?</button></p>';
+      '<p class="ask-hero__try" data-show="ux">Try: <button type="button" data-ask-q>What UX research has Dominic done?</button> · <button type="button" data-ask-q>What is Dominic’s design process?</button></p>' +
+      '<p class="ask-hero__try" data-show="branding">Try: <button type="button" data-ask-q>Summarize What Design Can’t Do</button> · <button type="button" data-ask-q>What did Dominic do at Cheil USA?</button></p>';
     document.documentElement.classList.add('has-ask-hero');
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (es) { es.forEach(function (e) { document.documentElement.classList.toggle('ask-hero-out', !e.isIntersecting); }); }, { threshold: 0 })

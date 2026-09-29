@@ -1,14 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-fixed="branding">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Pocket Sauce — Dominic Park</title>
   <meta name="description" content="Pocket Sauce: a personal brand that turns my favorite sauces into hand-drawn packets you can carry anywhere.">
+  <script>/* Collection → theme, set before paint: UX Design = dark, Branding = light. */
+  !function(h){var f=h.getAttribute('data-fixed'),p=null,s=null;try{p=new URLSearchParams(location.search).get('view')}catch(e){}if(p!=='ux'&&p!=='branding')p=null;try{s=localStorage.getItem('dp-view')}catch(e){}var v=f||p||s||'ux';try{localStorage.setItem('dp-view',v)}catch(e){}h.setAttribute('data-view',v);h.setAttribute('data-theme',v==='ux'?'dark':'light');var m=document.querySelector('meta[name=theme-color]')||document.head.appendChild(document.createElement('meta'));m.name='theme-color';m.content=v==='ux'?'#0d0d10':'#ffffff'}(document.documentElement)</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=17">
+  <link rel="stylesheet" href="../css/style.css?v=19">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -18,7 +20,7 @@
       <a class="link" href="../index.html">Dominic Park</a>
       <p class="site-header__center">[Branding, Visual Identity, Packaging]</p>
       <nav class="site-header__right" aria-label="Page">
-        <a class="link" href="../more.html"><span class="arrow arrow--l" aria-hidden="true">←</span> More projects</a>
+        <a class="link" href="../index.html"><span class="arrow arrow--l" aria-hidden="true">←</span> Back to Home</a>
       </nav>
     </div>
   </header>
@@ -192,8 +194,8 @@
     </section>
 
     <nav class="pager" aria-label="Project navigation">
-      <a href="living-outside.html"><small>Previous</small><span class="arrow arrow--l" aria-hidden="true">←</span> Living Outside</a>
-      <a class="pager__next" href="../more.html"><small>Back</small>More projects <span class="arrow arrow--r" aria-hidden="true">→</span></a>
+      <a href="what-design-cant-do.html"><small>Previous</small><span class="arrow arrow--l" aria-hidden="true">←</span> What Design Can’t Do</a>
+      <a class="pager__next" href="moving-type-face.html"><small>Next</small>Moving [Type] Face <span class="arrow arrow--r" aria-hidden="true">→</span></a>
     </nav>
   </main>
 
@@ -207,10 +209,10 @@
     </nav>
     </div>
   </footer>
-  <script src="../js/main.js?v=17"></script>
-  <script src="../js/assistant-kb.js?v=17"></script>
-  <script src="../js/assistant-index.js?v=17"></script>
-  <script src="../js/assistant.js?v=17"></script>
+  <script src="../js/main.js?v=19"></script>
+  <script src="../js/assistant-kb.js?v=19"></script>
+  <script src="../js/assistant-index.js?v=19"></script>
+  <script src="../js/assistant.js?v=19"></script>
   <script>
     // Build-your-own box: choose up to five sauces; they drop into the tray.
     (function () {

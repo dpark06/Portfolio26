@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#ffffff">
   <title>Dominic Park — UX &amp; Graphic Designer</title>
   <meta name="description" content="Dominic Park is a UX and graphic designer studying at the Rhode Island School of Design. Case studies in research-led product design, interaction, and brand.">
+  <script>/* Collection → theme, set before paint: UX Design = dark, Branding = light. */
+  !function(h){var f=h.getAttribute('data-fixed'),p=null,s=null;try{p=new URLSearchParams(location.search).get('view')}catch(e){}if(p!=='ux'&&p!=='branding')p=null;try{s=localStorage.getItem('dp-view')}catch(e){}var v=f||p||s||'ux';try{localStorage.setItem('dp-view',v)}catch(e){}h.setAttribute('data-view',v);h.setAttribute('data-theme',v==='ux'?'dark':'light');var m=document.querySelector('meta[name=theme-color]')||document.head.appendChild(document.createElement('meta'));m.name='theme-color';m.content=v==='ux'?'#0d0d10':'#ffffff'}(document.documentElement)</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=17">
+  <link rel="stylesheet" href="css/style.css?v=19">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -17,13 +18,15 @@
   <header class="site-header">
     <div class="site-header__inner">
       <a class="link" href="index.html" aria-current="page">Dominic Park</a>
-      <nav class="site-header__center" aria-label="Primary">
-        <a class="link" href="#work">Work</a>
-        <a class="link" href="about.html">About</a>
-        <a class="link" href="more.html">More</a>
-      </nav>
+      <div class="site-header__center">
+        <div class="view-switch view-switch--sm" role="radiogroup" aria-label="Show projects">
+          <button type="button" role="radio" data-view="ux">UX Design</button>
+          <button type="button" role="radio" data-view="branding">Branding</button>
+          <span class="view-switch__thumb" aria-hidden="true"></span>
+        </div>
+      </div>
       <nav class="site-header__right" aria-label="Secondary">
-        <a class="link only-phone" href="about.html">About</a>
+        <a class="link" href="about.html">About</a>
         <a class="link" href="Dominic-Park-Resume.pdf" target="_blank" rel="noopener">Resume <span class="arrow arrow--ne" aria-hidden="true">↗</span><span class="sr-only">(PDF, opens in a new tab)</span></a>
       </nav>
     </div>
@@ -32,22 +35,35 @@
   <main id="main">
     <section class="intro" aria-labelledby="intro-title">
       <div>
-        <h1 id="intro-title" class="reveal">Hi, I’m Dominic. I design experiences that begin with people.</h1>
+        <h1 id="intro-title" class="reveal"><span data-show="ux">Hi, I’m Dominic. I design experiences that begin with people.</span><span data-show="branding">Hi, I’m Dominic. I build brands with a personality you can hold.</span></h1>
+        <div class="view-pick reveal">
+          <p class="view-pick__label" id="view-pick-label">See my work in</p>
+          <div class="view-switch" role="radiogroup" aria-labelledby="view-pick-label">
+            <button type="button" role="radio" data-view="ux">UX Design <span class="view-switch__n" aria-hidden="true">5</span></button>
+            <button type="button" role="radio" data-view="branding">Branding <span class="view-switch__n" aria-hidden="true">6</span></button>
+            <span class="view-switch__thumb" aria-hidden="true"></span>
+          </div>
+        </div>
         <div id="ask-hero"></div>
       </div>
       <div class="reveal">
-        <p>I’m a junior at the Rhode Island School of Design studying Graphic Design with a minor in Computation and Psychology. My work starts with listening; I talk to users, find where the experience breaks, and design interfaces, systems, and campaigns that make the next step feel obvious.</p>
-        <p>I’ve designed for Cheil USA (Samsung), Providence Promise, Living Outside, and Girl Scouts.</p>
-        <ul class="tags" aria-label="Focus areas">
-          <li>UX Research</li><li>Interface Design</li><li>Interaction</li><li>Brand Systems</li>
-        </ul>
+        <div data-show="ux">
+          <p>I’m a junior at the Rhode Island School of Design studying Graphic Design with a minor in Computation and Psychology. My work starts with listening; I talk to users, find where the experience breaks, and design the interface that makes the next step feel obvious.</p>
+          <p>I’ve designed for Providence Promise, Living Outside, and Design for America.</p>
+          <ul class="tags" aria-label="Focus areas"><li>UX Research</li><li>Interface Design</li><li>Interaction</li><li>Usability Testing</li></ul>
+        </div>
+        <div data-show="branding">
+          <p>I’m a junior at the Rhode Island School of Design studying Graphic Design. On the branding side, I build the systems people actually touch: campaigns, packaging, type, books, and the characters that carry a brand’s voice.</p>
+          <p>I’ve designed for Cheil USA (Samsung) and Girl Scouts.</p>
+          <ul class="tags" aria-label="Focus areas"><li>Brand Identity</li><li>Art Direction</li><li>Packaging</li><li>Typography</li></ul>
+        </div>
       </div>
     </section>
 
-    <h2 class="sr-only" id="work">Selected work</h2>
+    <h2 class="sr-only" id="work"><span data-show="ux">UX Design projects</span><span data-show="branding">Branding projects</span></h2>
     <ol class="work-grid" aria-labelledby="work">
 
-      <li class="card reveal">
+      <li class="card reveal" data-show="ux">
         <a href="work/providence-promise.html">
           <div class="card__media">
             <img class="cover" src="assets/pp/hero-volunteering.jpg" alt="In a community classroom, a hand holds a phone open to the Providence Promise app home screen: Welcome Back, Alexia, with events, submissions, and $300 earned">
@@ -60,27 +76,18 @@
           </div>
         </a>
       </li>
-
-      <li class="card reveal">
-        <a href="work/bodega-cats.html">
-          <div class="card__media card__media--stage">
-            <div class="stage stage--bodega">
-              <picture>
-                <source srcset="assets/bodega/cans-still.webp" media="(prefers-reduced-motion: reduce)">
-                <img class="contain" src="assets/bodega/cans-spin.webp" alt="Three stacked cat food cans wrapped in a blue collage label, spinning on a bright blue background" loading="lazy">
-              </picture>
-            </div>
-          </div>
+      <li class="card reveal" data-show="ux">
+        <a href="work/living-outside.html">
+          <div class="card__media"><img class="cover" src="assets/lo/home-top.webp" alt="Top of the redesigned Living Outside home page: Humanizing homelessness, one connection at a time" loading="lazy"></div>
           <div class="card__body">
-            <div class="card__top"><span class="card__index" aria-hidden="true">02</span><h3>Not Only for Bodega Cats<span class="arrow" aria-hidden="true">→</span></h3></div>
-            <p class="card__cats">Interaction Design · Web · Packaging</p>
-            <p class="card__blurb">Fifty convenience-store images, annotated with five symbols for how people move through a store, made public as a can of cat food and a website where anyone can add their own reading.</p>
-            <ul class="card__facts" aria-label="Project facts"><li><b>3 weeks</b></li><li><b>Solo</b></li><li>Figma, Blender, HTML/CSS/JS</li></ul>
+            <div class="card__top"><span class="card__index" aria-hidden="true">02</span><h3>Living Outside<span class="arrow" aria-hidden="true">→</span></h3></div>
+            <p class="card__badge">Work in progress</p><p class="card__cats">Web Redesign · UX Research · Information Architecture</p>
+            <p class="card__blurb">A website redesign for a youth-led nonprofit working to destigmatize homelessness. The old site hid information several clicks deep; the redesign gives each audience a direct path.</p>
+            <ul class="card__facts" aria-label="Project facts"><li><b>Jul 2026 – present</b></li><li><b>3 designers</b></li><li>Figma, FigJam</li></ul>
           </div>
         </a>
       </li>
-
-      <li class="card reveal">
+      <li class="card reveal" data-show="ux">
         <a href="work/mr-zeno.html">
           <div class="card__media"><img class="cover" src="assets/zeno/student.jpg" alt="A student at a campus table practicing with the Mr. Zeno app on his phone while holding the Zeno figure from its box" loading="lazy"></div>
           <div class="card__body">
@@ -91,32 +98,69 @@
           </div>
         </a>
       </li>
-
-      <li class="card reveal">
+      <li class="card reveal" data-show="ux">
         <a href="work/head-in-the-clouds.html">
           <div class="card__media"><img class="cover" src="assets/live/hitc-1.webp" alt="Festival entrance arch with the pastel Head in the Clouds banner, Rose Bowl, August 8, 2026" loading="lazy"></div>
           <div class="card__body">
             <div class="card__top"><span class="card__index" aria-hidden="true">04</span><h3>Head in the Clouds<span class="arrow" aria-hidden="true">→</span></h3></div>
-            <p class="card__cats">Brand Identity · Web UI · Information Architecture</p>
-            <p class="card__blurb">A rebrand of 88rising’s festival built around what fans struggle with before and after the music: the heat, confusing passes, and information scattered across Reddit.</p>
+            <p class="card__cats">Web UI · Information Architecture · Research</p>
+            <p class="card__blurb">A festival website built around what fans struggle with before and after the music: the heat, confusing passes, and information scattered across Reddit.</p>
             <ul class="card__facts" aria-label="Project facts"><li><b>2 weeks</b></li><li><b>Solo</b></li><li>Figma, Cinema 4D, Illustrator, Photoshop</li></ul>
           </div>
         </a>
       </li>
-
-      <li class="card reveal">
+      <li class="card reveal" data-show="ux">
+        <a href="work/bodega-cats.html">
+          <div class="card__media card__media--stage">
+            <div class="stage stage--bodega">
+              <picture>
+                <source srcset="assets/bodega/cans-still.webp" media="(prefers-reduced-motion: reduce)">
+                <img class="contain" src="assets/bodega/cans-spin.webp" alt="Three stacked cat food cans wrapped in a blue collage label, spinning on a bright blue background" loading="lazy">
+              </picture>
+            </div>
+          </div>
+          <div class="card__body">
+            <div class="card__top"><span class="card__index" aria-hidden="true">05</span><h3>Not Only for Bodega Cats<span class="arrow" aria-hidden="true">→</span></h3></div>
+            <p class="card__cats">Interaction Design · Web · Research</p>
+            <p class="card__blurb">Fifty convenience-store images, annotated with five symbols for how people move through a store, made public as a can of cat food and a website where anyone can add their own reading.</p>
+            <ul class="card__facts" aria-label="Project facts"><li><b>3 weeks</b></li><li><b>Solo</b></li><li>Figma, Blender, HTML/CSS/JS</li></ul>
+          </div>
+        </a>
+      </li>
+      <li class="card reveal" data-show="branding">
         <a href="work/cheil.html">
           <div class="card__media"><img class="cover" src="assets/cheil/extra-2.png" alt="A man in a desert looks up at a giant unfolded Galaxy Z Fold8 Ultra while paper planes drift across the sky" loading="lazy"></div>
           <div class="card__body">
-            <div class="card__top"><span class="card__index" aria-hidden="true">05</span><h3>Cheil USA (Samsung)<span class="arrow" aria-hidden="true">→</span></h3></div>
+            <div class="card__top"><span class="card__index" aria-hidden="true">01</span><h3>Cheil USA (Samsung)<span class="arrow" aria-hidden="true">→</span></h3></div>
             <p class="card__cats">Campaign Strategy · App Concept · Art Direction</p>
             <p class="card__blurb">A social-first campaign that keeps Samsung’s foldables at the center of the conversation, including a lifestyle-simulator app that lets people try each phone’s personality before they own it.</p>
             <ul class="card__facts" aria-label="Project facts"><li><b>6 weeks</b></li><li><b>Team of 4</b></li><li>Illustrator, Photoshop, Figma, generative AI</li></ul>
           </div>
         </a>
       </li>
-
-      <li class="card reveal">
+      <li class="card reveal" data-show="branding">
+        <a href="work/what-design-cant-do.html">
+          <div class="card__media"><img class="cover" src="assets/book/hero.webp" alt="The finished book: its olive cover, the Chapter 6 opener, and a page with a sideways caption" loading="lazy"></div>
+          <div class="card__body">
+            <div class="card__top"><span class="card__index" aria-hidden="true">02</span><h3>What Design Can’t Do<span class="arrow" aria-hidden="true">→</span></h3></div>
+            <p class="card__cats">Editorial Design · Typography · Bookbinding</p>
+            <p class="card__blurb">Silvio Lorusso’s essays, typeset in a three-typeface system and perfect bound by hand: calm for the long read, playful in the margins.</p>
+            <ul class="card__facts" aria-label="Project facts"><li><b>3 weeks</b></li><li><b>Solo</b></li><li>InDesign, perfect binding</li></ul>
+          </div>
+        </a>
+      </li>
+      <li class="card reveal" data-show="branding">
+        <a href="work/pocket-sauce.html">
+          <div class="card__media"><img class="cover" src="assets/sauce/hero.webp" alt="A model with sauce on their face and fingers in front of a shelf of sauces, with the Pocket Sauce packet logo" loading="lazy"></div>
+          <div class="card__body">
+            <div class="card__top"><span class="card__index" aria-hidden="true">03</span><h3>Pocket Sauce<span class="arrow" aria-hidden="true">→</span></h3></div>
+            <p class="card__cats">Brand Identity · Illustration · Packaging · Photography</p>
+            <p class="card__blurb">I don’t eat anything without sauce, so I designed a way to carry my favorites everywhere: hand-drawn sauce packets, a brand, and a very messy photo campaign.</p>
+            <ul class="card__facts" aria-label="Project facts"><li><b>1.5 weeks</b></li><li><b>Solo</b></li><li>Procreate, Illustrator, Photoshop</li></ul>
+          </div>
+        </a>
+      </li>
+      <li class="card reveal" data-show="branding">
         <a href="work/moving-type-face.html">
           <div class="card__media card__media--stage">
             <div class="stage stage--type">
@@ -127,19 +171,36 @@
             </div>
           </div>
           <div class="card__body">
-            <div class="card__top"><span class="card__index" aria-hidden="true">06</span><h3>Moving [Type] Face<span class="arrow" aria-hidden="true">→</span></h3></div>
+            <div class="card__top"><span class="card__index" aria-hidden="true">04</span><h3>Moving [Type] Face<span class="arrow" aria-hidden="true">→</span></h3></div>
             <p class="card__cats">Type Design</p>
             <p class="card__blurb">Two typefaces built to disagree, one ruled and one drawn from my own characters, layered until control and personality share the same letter.</p>
             <ul class="card__facts" aria-label="Project facts"><li><b>1 week</b></li><li><b>Solo</b></li><li>Illustrator, pen and paper</li></ul>
           </div>
         </a>
       </li>
+      <li class="card reveal" data-show="branding">
+        <a href="work/head-in-the-clouds.html#identity">
+          <div class="card__media"><img class="cover" src="assets/live/hitc-7.webp" alt="Bus shelter displaying three Head in the Clouds posters with clouds, pink flowers, and the cloud-headed mascot" loading="lazy"></div>
+          <div class="card__body">
+            <div class="card__top"><span class="card__index" aria-hidden="true">05</span><h3>Head in the Clouds: identity<span class="arrow" aria-hidden="true">→</span></h3></div>
+            <p class="card__badge">Also in UX Design</p><p class="card__cats">Brand Identity · Merch · 3D Visuals</p>
+            <p class="card__blurb">The festival identity on its own: a cloud-headed mascot with spring florals, Cinema 4D visuals, and merch designed for the day itself.</p>
+            <ul class="card__facts" aria-label="Project facts"><li><b>2 weeks</b></li><li><b>Solo</b></li><li>Illustrator, Cinema 4D, Photoshop</li></ul>
+          </div>
+        </a>
+      </li>
+      <li class="card reveal" data-show="branding">
+        <a href="work/bodega-cats.html#results">
+          <div class="card__media"><img class="cover" src="assets/bodega/on-the-shelf.jpg" alt="Three stacked cans in their blue collage label on a pet care shelf in a convenience store" loading="lazy"></div>
+          <div class="card__body">
+            <div class="card__top"><span class="card__index" aria-hidden="true">06</span><h3>Bodega Cats: posters and packaging<span class="arrow" aria-hidden="true">→</span></h3></div>
+            <p class="card__badge">Also in UX Design</p><p class="card__cats">Poster · Packaging · 3D</p>
+            <p class="card__blurb">The collection made public: 24 × 36 in posters and a cat food can modeled in Blender, down to the label.</p>
+            <ul class="card__facts" aria-label="Project facts"><li><b>3 weeks</b></li><li><b>Solo</b></li><li>Illustrator, Blender</li></ul>
+          </div>
+        </a>
+      </li>
     </ol>
-
-    <div class="more-row">
-      <p>Branding, packaging, and web work beyond these six.</p>
-      <a class="btn" href="more.html">More projects <span class="arrow arrow--r" aria-hidden="true">→</span></a>
-    </div>
   </main>
 
   <footer class="site-footer">
@@ -153,9 +214,9 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=17"></script>
-  <script src="js/assistant-kb.js?v=17"></script>
-  <script src="js/assistant-index.js?v=17"></script>
-  <script src="js/assistant.js?v=17"></script>
+  <script src="js/main.js?v=19"></script>
+  <script src="js/assistant-kb.js?v=19"></script>
+  <script src="js/assistant-index.js?v=19"></script>
+  <script src="js/assistant.js?v=19"></script>
 </body>
 </html>
