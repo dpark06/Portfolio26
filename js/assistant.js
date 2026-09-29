@@ -79,7 +79,56 @@
     });
     return paras.length > 1 ? { paras: paras, sources: sources, follow: ['Show me the projects', 'How do I contact Dominic?'] } : null;
   }
+  // ---------- across projects ----------
+  // "Which projects use 3D?" is answered from every case study's Role and Tools facts, so a new
+  // project page shows up here as soon as the index is rebuilt; nothing is hard-coded per project.
+  var TOPICS = [
+    { k: ['3d', 'three d', 'blender', 'cinema 4d', 'c4d', 'spline', 'modeling', 'modelling', 'render', 'rendering'], label: '3D', lead: 'use 3D', terms: ['3d', 'blender', 'cinema 4d', 'c4d', 'spline'] },
+    { k: ['code', 'coding', 'coded', 'html', 'css', 'javascript', 'js', 'develop', 'built a website'], label: 'code', lead: 'involve code', terms: ['html', 'css', 'js', 'github'] },
+    { k: ['ai', 'generative'], label: 'AI', lead: 'use AI', terms: ['generative ai', ' ai'] },
+    { k: ['packaging', 'package', 'box'], label: 'packaging', lead: 'include packaging', terms: ['packaging'] },
+    { k: ['research', 'user research'], label: 'research', lead: 'involve research', terms: ['research'] },
+    { k: ['brand', 'branding', 'identity', 'rebrand'], label: 'branding', lead: 'involve branding or art direction', terms: ['identity', 'brand', 'art direction'] },
+    { k: ['web', 'website', 'site', 'web design'], label: 'web', lead: 'include web design', terms: ['website', 'web ui', 'navigation', 'page design'] },
+    { k: ['illustration', 'illustrate', 'drawing', 'drawn', 'procreate'], label: 'illustration', lead: 'include illustration', terms: ['illustration', 'procreate'] },
+    { k: ['typography', 'type', 'typeface', 'font', 'lettering'], label: 'type design', lead: 'involve type design', terms: ['type designer', 'typeface'] },
+    { k: ['photo', 'photography', 'camera', 'photoshoot'], label: 'photography', lead: 'include photography', terms: ['photography', 'camera'] },
+    { k: ['team', 'teams', 'group', 'collaborat'], label: 'a team', lead: 'were team projects', whole: 'Team', terms: ['designers', 'interns', 'volunteer designers'] },
+    { k: ['solo', 'alone', 'by himself', 'independent', 'self-initiated', 'personal'], label: 'solo', lead: 'were solo', whole: 'Team', terms: ['solo'] },
+    { k: ['figma'], label: 'Figma', lead: 'use Figma', terms: ['figma'] }, { k: ['illustrator'], label: 'Illustrator', lead: 'use Illustrator', terms: ['illustrator'] },
+    { k: ['photoshop'], label: 'Photoshop', lead: 'use Photoshop', terms: ['photoshop'] }, { k: ['figjam'], label: 'FigJam', lead: 'use FigJam', terms: ['figjam'] }
+  ];
+  var CROSS = /\s(which|what|any|other|all|how many)\s(of\s)?(his\s|dominic's\s|the\s|your\s)?(other\s)?(projects?|work|case studies|pieces)\s|\sprojects?\s(that|with|use|using|uses|used|include|including|involve|involving|have|has|where)\s|\sany\s.+\s(work|projects?)\s|\sdoes\s.*\s(do|use|know)\s.*\s(work|projects?)\s/;
+  function topicFor(q) {
+    var nq = norm(q), qt = tokens(q);
+    return TOPICS.filter(function (t) { return t.k.some(function (k) { return k.indexOf(' ') > -1 ? nq.indexOf(' ' + k + ' ') > -1 : qt.indexOf(stem(k)) > -1; }); })[0] || null;
+  }
+  function crossProject(q, topic) {
+    var hits = [];
+    INDEX.filter(function (d) { return d.t === 'Overview'; }).forEach(function (d) {
+      var items = [];
+      (d.f || '').split('; ').forEach(function (part) {
+        var m = part.match(/^(Role|Tools|Team):\s*(.*)$/); if (!m) return;
+        if (topic.whole) { if (m[1] === topic.whole && topic.terms.some(function (t) { return m[2].toLowerCase().indexOf(t) > -1; })) items.push(m[2]); return; }
+        m[2].split(/,\s*|:\s*/).forEach(function (item) {
+          var low = ' ' + item.toLowerCase() + ' ';
+          if (topic.terms.some(function (t) { return low.indexOf(t) > -1; }) && items.indexOf(item.trim()) < 0) items.push(item.trim());
+        });
+      });
+      if (items.length) hits.push({ d: d, items: items });
+    });
+    if (!hits.length) return null;
+    return {
+      paras: [(hits.length === 1 ? 'One project ' + topic.lead.replace(/^use /, 'uses ').replace(/^involve /, 'involves ').replace(/^include /, 'includes ').replace(/^were team projects/, 'was a team project').replace(/^were /, 'was ') : hits.length + ' projects ' + topic.lead) + ':']
+        .concat(hits.map(function (h) { return '• ' + h.d.p + ': ' + h.items.join(', '); })),
+      sources: hits.map(function (h) { return [h.d.p, h.d.h]; }),
+      follow: ['Summarize ' + hits[0].d.p].concat(hits[1] ? ['Summarize ' + hits[1].d.p] : []).concat(['Show me the projects'])
+    };
+  }
+
   function answer(q) {
+    var topic = topicFor(q);
+    if (topic && !/\s(this|that)\s(project|page|case study|one)\s/.test(norm(q)) && (CROSS.test(norm(q)) || topic.label === '3D' && !HERE)) { var cp = crossProject(q, topic); if (cp) return cp; }
     var hit = scoreKB(q), qt = tokens(q);
     var deictic = /\s(this|here|page|it|current)\s/.test(norm(q));
     var onlyGeneric = qt.length && qt.every(function (t) { return GENERIC.indexOf(t) > -1; }) && !(hit && hit.sc >= 1.6);
@@ -213,7 +262,8 @@
       var ext = /^https?:/.test(s[1]) || /\.pdf$/.test(s[1]);
       return '<a class="ask-source" href="' + esc(href(s[1])) + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '>' + esc(s[0]) + ' <span aria-hidden="true">↗</span></a>';
     }).join('') + '</div>';
-    if (r.follow && r.follow.length) metaHtml += '<div class="ask-follow">' + r.follow.map(function (f) { return '<button class="ask-chip ask-chip--ghost" type="button" data-ask-q>' + esc(f) + '</button>'; }).join('') + '</div>';
+    r.follow = (r.follow || []).filter(function (f) { return norm(f) !== norm(q); });
+    if (r.follow.length) metaHtml += '<div class="ask-follow">' + r.follow.map(function (f) { return '<button class="ask-chip ask-chip--ghost" type="button" data-ask-q>' + esc(f) + '</button>'; }).join('') + '</div>';
     typingTimer = setTimeout(function () {
       overlay.classList.remove('is-thinking');
       textEl.innerHTML = html.join(''); meta.innerHTML = metaHtml;
