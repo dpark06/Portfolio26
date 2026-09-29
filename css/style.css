@@ -740,3 +740,27 @@ figcaption { font-size: 13px; color: var(--ink-3); margin-top: 8px; }
 .type-set--7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
 .type-set--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 @media (max-width: 699px) { .type-set--7 { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+
+/* Type tester (Moving [Type] Face) */
+.tester { border-bottom: 1px solid var(--rule); }
+.tester__inner { max-width: var(--max); margin: 0 auto; padding: clamp(44px, 7vw, 104px) var(--pad); }
+.tester h2 { font-size: clamp(22px, 2.2vw, 30px); line-height: 1.2; margin-bottom: 10px; }
+.tester__note { color: var(--ink-2); margin-bottom: 24px; }
+.tester__controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin-bottom: 16px; }
+.tester__input { flex: 1 1 320px; min-height: 48px; padding: 0 16px; font: inherit; font-size: 17px; color: var(--ink); background: #fff; border: 1px solid #cfcfcf; border-radius: var(--radius); }
+.tester__input:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.tester__size { display: inline-flex; align-items: center; gap: 10px; font-size: 14.5px; color: var(--ink-2); min-height: 44px; }
+.tester__size input { width: 140px; accent-color: var(--ink); }
+.tester__btn { min-height: 44px; padding: 0 18px; font: inherit; font-size: 14.5px; color: var(--ink); background: #fff; border: 1px solid #cfcfcf; border-radius: 999px; cursor: pointer; }
+.tester__btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.tester__stage { --glyph: 88px; min-height: calc(var(--glyph) + 2 * clamp(16px, 3vw, 40px)); display: flex; flex-wrap: wrap; align-content: flex-start; row-gap: calc(var(--glyph) * .12);
+  padding: clamp(16px, 3vw, 40px); background: #fff; border: 1px solid var(--rule); border-radius: var(--radius-lg); cursor: text; transition: border-color var(--t-fast) var(--ease); }
+.tester__stage.is-focus { border-color: #9a9a9a; }
+.tester__word { display: inline-flex; flex-wrap: nowrap; align-items: center; }
+.tester__glyph { width: var(--glyph); height: var(--glyph); flex: none; display: block; }
+.tester__space { width: calc(var(--glyph) * .45); flex: none; }
+.tester__caret { width: 2px; height: calc(var(--glyph) * .8); margin-left: 4px; align-self: center; background: var(--ink); opacity: 0; }
+.tester__stage.is-focus .tester__caret { animation: tt-blink 1s steps(1) infinite; }
+@keyframes tt-blink { 0%, 50% { opacity: 1; } 50.01%, 100% { opacity: 0; } }
+@media (max-width: 699px) { .tester__stage { --glyph: 52px !important; } .tester__size { display: none; } }
+@media (prefers-reduced-motion: reduce) { .tester__stage.is-focus .tester__caret { animation: none; opacity: 1; } }

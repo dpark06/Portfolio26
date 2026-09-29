@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=16">
+  <link rel="stylesheet" href="../css/style.css?v=17">
   <style>
     .glyphs { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(8px, 1.4vw, 18px); background: #fff; padding: clamp(12px, 2vw, 24px); border-radius: var(--radius); border: 1px solid var(--rule); }
     .glyphs img { transition: transform 500ms var(--ease); }
@@ -113,8 +113,22 @@
         <div class="type-set type-set--5 reveal" role="img" aria-label="Ten blue glyphs, each with a white character figure standing inside its shape"><img src="../assets/type/figure-01.webp" alt="" width="488" height="488" loading="lazy"><img src="../assets/type/figure-02.webp" alt="" width="488" height="488" loading="lazy"><img src="../assets/type/figure-03.webp" alt="" width="488" height="488" loading="lazy"><img src="../assets/type/figure-04.webp" alt="" width="488" height="488" loading="lazy"><img src="../assets/type/figure-05.webp" alt="" width="488" height="488" loading="lazy"><img src="../assets/type/figure-06.webp" alt="" width="488" height="488" loading="lazy"><img src="../assets/type/figure-07.webp" alt="" width="488" height="488" loading="lazy"><img src="../assets/type/figure-08.webp" alt="" width="488" height="488" loading="lazy"><img src="../assets/type/figure-09.webp" alt="" width="488" height="488" loading="lazy"><img src="../assets/type/figure-10.webp" alt="" width="488" height="488" loading="lazy"></div>
       </div>
     </section>
+    <section class="tester" id="try" aria-labelledby="h-try">
+      <div class="tester__inner">
+        <p class="chapter__label"><span>06</span> Try it</p>
+        <h2 id="h-try" class="reveal">Type something in Moving [Type] Face.</h2>
+        <p class="tester__note reveal">Letters A to Z and numbers 0 to 9 are drawn. Any other key leaves a blank space.</p>
+        <div class="tester__controls reveal">
+          <label class="sr-only" for="tt-input">Text to set in Moving [Type] Face</label>
+          <input id="tt-input" class="tester__input" type="text" value="Moving Type Face" maxlength="80" autocomplete="off" autocapitalize="characters" spellcheck="false">
+          <label class="tester__size">Size <input id="tt-size" type="range" min="32" max="160" value="88"></label>
+          <button id="tt-clear" class="tester__btn" type="button">Clear</button>
+        </div>
+        <div id="tt-out" class="tester__stage reveal" role="img" aria-label="Moving Type Face"></div>
+      </div>
+    </section>
     <section class="takeaway" id="takeaway" aria-labelledby="h-take"><div class="takeaway__inner">
-      <p class="chapter__label"><span>06</span> Takeaway</p>
+      <p class="chapter__label"><span>07</span> Takeaway</p>
       <h2 id="h-take" class="reveal">Where it succeeds: legibility with a pulse.</h2>
       <p class="reveal">A type system is an interface; it decides how quickly someone understands and how they feel while doing it. Splitting those two jobs into two layers let the blue carry legibility and the yellow carry voice, the same lesson behind my Head in the Clouds work, where softness belongs in the background and never in the text. A face like this fits brands that talk to kids and young audiences, where play has to stay readable.</p>
       <div class="impact">
@@ -141,9 +155,10 @@
     </nav>
     </div>
   </footer>
-  <script src="../js/main.js?v=16"></script>
-  <script src="../js/assistant-kb.js?v=16"></script>
-  <script src="../js/assistant-index.js?v=16"></script>
-  <script src="../js/assistant.js?v=16"></script>
+  <script src="../js/main.js?v=17"></script>
+  <script src="../js/type-tester.js?v=17"></script>
+  <script src="../js/assistant-kb.js?v=17"></script>
+  <script src="../js/assistant-index.js?v=17"></script>
+  <script src="../js/assistant.js?v=17"></script>
 </body>
 </html>
