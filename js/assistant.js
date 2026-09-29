@@ -16,7 +16,7 @@
                   'What did Dominic do at Cheil USA?', 'Which projects include usability testing?', 'How do I contact Dominic?'];
 
   // ---------- text helpers ----------
-  var STOP = 'a an the and or of to in on for with at by from is are was were be been do does did has have had i me my you your it its this that what which who whom how why when where can could would should will about tell show give list please dominic dominics s his her their them they he she many much people any also just some there here get go going want know'.split(' ');
+  var STOP = 'a an the and or of to in on for with at by from is are was were be been do does did has have had i me my you your it its this that what which who whom how why when where can could would should will about tell show give list please dominic dominics s his her their them they he she many much people any also just some there here get go going want know into went were used use using happen happened like'.split(' ');
   function norm(s) { return (' ' + s.toLowerCase().replace(/[’']/g, "'").replace(/[^a-z0-9#.+' ]+/g, ' ').replace(/\s+/g, ' ') + ' ').replace(/\.+ /g, ' '); }
   function stem(w) { return w.replace(/'s$/, '').replace(/(ing|ed|es|s)$/, '').replace(/[.']/g, ''); }
   function tokens(s) { return norm(s).trim().split(' ').filter(function (w) { return w && STOP.indexOf(w) < 0; }).map(stem).filter(function (w) { return w && STOP.indexOf(w) < 0; }); }
@@ -39,8 +39,8 @@
     return best;
   }
   var DOCS = INDEX.map(function (d) {
-    var text = [d.p, d.t, d.hd, d.x, d.f, (d.l || []).join(' ')].join(' ');
-    return { d: d, toks: tokens(text), head: tokens([d.p, d.t, d.hd].join(' ')) };
+    var text = [d.p, d.t, d.hd, (d.h.split('#')[1] || '').replace(/-/g, ' '), d.x, d.f, (d.l || []).join(' ')].join(' ');
+    return { d: d, toks: tokens(text), head: tokens([d.p, d.t, d.hd, (d.h.split('#')[1] || '').replace(/-/g, ' ')].join(' ')) };
   });
   var DF = {}; DOCS.forEach(function (doc) { var seen = {}; doc.toks.forEach(function (t) { if (!seen[t]) { DF[t] = (DF[t] || 0) + 1; seen[t] = 1; } }); });
   function searchIndex(q, proj, only) {
@@ -63,6 +63,12 @@
       .sort(function (a, b) { return b.sc - a.sc || a.i - b.i; }).slice(0, 2).sort(function (a, b) { return a.i - b.i; });
     return ranked.map(function (r) { return r.s; }).join(' ');
   }
+  // Which case study is open? Lets "summarize this" or "what were the results?" mean this page.
+  var PAGE = location.pathname.split('/').pop() || 'index.html';
+  var HERE = KB.filter(function (e) { return e.proj && e.s[0][1].split('#')[0] === 'work/' + PAGE; })[0] || null;
+  if (HERE) STARTERS = ['Summarize this project', 'What was the problem here?', 'What research went into this?',
+                        'What were the results?', 'Which tools were used here?', 'How do I contact Dominic?'];
+
   var GENERIC = tokens('usa samsung summarize summary overview project projects tell explain describe work case study about more detail details info information do did doing make made');
   function fromIndex(found, q) {
     var paras = ['Here’s what the portfolio says:'], sources = [];
@@ -75,13 +81,28 @@
   }
   function answer(q) {
     var hit = scoreKB(q), qt = tokens(q);
+    var deictic = /\s(this|here|page|it|current)\s/.test(norm(q));
+    var onlyGeneric = qt.length && qt.every(function (t) { return GENERIC.indexOf(t) > -1; }) && !(hit && hit.sc >= 1.6);
+    if (!HERE && (deictic || onlyGeneric) && !(hit && hit.sc >= 1)) {   // "summarize this" on Home / About / More
+      var pageEntry = KB.filter(function (e) { return e.id === (PAGE === 'more.html' ? 'projects' : 'about'); })[0];
+      if (pageEntry) return { paras: pageEntry.a, sources: pageEntry.s, follow: pageEntry.f };
+    }
+    if (HERE && !(hit && hit.sc >= 2 && hit.e.proj)) {
+      if (deictic || onlyGeneric) hit = { e: HERE, sc: 2, used: [], qt: qt };
+      else if (!hit || hit.sc < 1 || (hit.sc < 2 && !/\s(dominic|dominic's|he|his|him)\s/.test(norm(q)))) {   // about him → resume; otherwise this page first
+        var specific = qt.filter(function (t) { return GENERIC.indexOf(t) < 0; });
+        var local = specific.length ? searchIndex(q, HERE.proj, specific).filter(function (r) { return r.cov >= 0.5; }) : [];
+        var la = local.length && fromIndex(local, q);
+        if (la) { la.follow = HERE.f; return la; }
+      }
+    }
     // A project is named, but the question asks about something specific in it: search that project's pages.
     if (hit && hit.sc >= 2 && hit.e.proj) {
       var extra = qt.filter(function (t) { return hit.used.indexOf(t) < 0 && GENERIC.indexOf(t) < 0 && tokens(hit.e.proj).indexOf(t) < 0; });
       if (extra.length) {
         var side = scoreKB(extra.join(' '));              // e.g. "the AI agent at Cheil" → the AI entry
         if (side && side.sc >= 2 && !side.e.proj) return { paras: side.e.a, sources: side.e.s, follow: side.e.f };
-        var scoped = searchIndex(q, hit.e.proj, extra).filter(function (r) { return r.cov >= 0.5; }).slice(0, 2);
+        var scoped = searchIndex(q, hit.e.proj, extra).filter(function (r) { return r.cov >= 0.34; }).slice(0, 2);
         var ans = scoped.length && fromIndex(scoped, extra.join(' '));
         if (ans) { ans.sources.push([hit.e.proj + ' case study', hit.e.s[0][1]]); ans.follow = hit.e.f; return ans; }
       }
@@ -120,6 +141,7 @@
         orb('ask-orb--presence') +
         '<h2 class="ask-home__h">What would you like to know?</h2>' +
         '<p class="ask-home__sub">Answers come only from Dominic’s resume and portfolio.</p>' +
+        (HERE ? '<p class="ask-here"><span class="ask-here__dot" aria-hidden="true"></span>Reading this page: ' + esc(HERE.proj) + '</p>' : '') +
         '<div class="ask-chips" role="list">' + STARTERS.map(function (s) { return '<button class="ask-chip" type="button" role="listitem" data-ask-q>' + esc(s) + '</button>'; }).join('') + '</div>' +
       '</div>' +
       '<div class="ask-answer" data-ask-answer hidden>' +
@@ -129,7 +151,7 @@
         '<div class="ask-answer__meta" data-ask-meta></div>' +
       '</div>' +
     '</div>' +
-    '<div class="ask-space__bottom">' + bar('ask-input', 'Ask me anything about my work, skills, or resume…', 'Ask a question about Dominic') +
+    '<div class="ask-space__bottom">' + bar('ask-input', HERE ? 'Ask about ' + HERE.proj + ', or anything else…' : 'Ask me anything about my work, skills, or resume…', 'Ask a question about Dominic') +
       '<p class="ask-space__note">AI can make mistakes. Every answer links to where it came from. <span class="ask-hide-sm">· Click outside or press Esc to close</span></p>' +
     '</div>';
   document.body.appendChild(overlay);
@@ -171,7 +193,7 @@
     setTimeout(function () { overlay.hidden = true; showHome(); }, reduce ? 0 : 280);
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
-  function showHome() { ans.hidden = true; home.hidden = false; input.value = ''; input.placeholder = 'Ask me anything about my work, skills, or resume…'; }
+  function showHome() { ans.hidden = true; home.hidden = false; input.value = ''; input.placeholder = HERE ? 'Ask about ' + HERE.proj + ', or anything else…' : 'Ask me anything about my work, skills, or resume…'; }
 
   function render(q) {
     var r = answer(q);

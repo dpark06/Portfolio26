@@ -681,6 +681,9 @@ figcaption { font-size: 13px; color: var(--ink-3); margin-top: 8px; }
 .ask-home .ask-orb { margin: 0 auto 28px; display: block; }
 .ask-home__h { font-size: clamp(28px, 3.4vw, 44px); font-weight: 500; letter-spacing: -0.02em; }
 .ask-home__sub { margin: 10px 0 28px; color: rgba(255,255,255,.65); font-size: 16px; }
+.ask-home__sub:has(+ .ask-here) { margin-bottom: 14px; }
+.ask-here { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 28px; padding: 6px 14px 6px 10px; border-radius: 999px; background: rgba(255,255,255,.08); color: rgba(255,255,255,.85); font-size: 14px; }
+.ask-here__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ask-grad); background: conic-gradient(from 0deg, #FF6EC4, #7873F5, #4ADEDE, #FFB86B, #FF6EC4); }
 .ask-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .ask-chip { min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.08); color: rgba(255,255,255,.95); font: inherit; font-size: 14.5px; cursor: pointer; transition: background var(--t-fast) var(--ease), transform var(--t-fast) var(--ease); }
 .ask-chip:hover, .ask-chip:focus-visible { background: rgba(255,255,255,.18); }
