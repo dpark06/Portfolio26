@@ -76,6 +76,13 @@ window.ASK_KB = [
     s: [['Cheil USA case study', 'work/cheil.html'], ['Resume (PDF)', 'Dominic-Park-Resume.pdf']],
     f: ['What is the Life Unfolded app?', 'Which tools does Dominic use?'] },
 
+  { id: 'delta', ent: true, proj: 'Cheil Delta', k: ['cheil delta', 'delta', 'agent', 'ai agent', 'ai tool', 'comparison deck', 'review deck', 'deck', 'decks', 'powerpoint', 'ollama', 'next.js', 'nextjs', 'typescript', 'postgresql', 'claude code', 'pipeline', 'built an app', 'coded'],
+    a: ['Cheil Delta is an internal AI tool Dominic built at Cheil USA. It compares two versions of a creative file (PDF, PNG, or JPEG), detects every change with a deterministic diff engine, has AI explain each change in plain language, and builds a branded PowerPoint review deck only after a person confirms or corrects every finding.',
+        'It turned a roughly 45-minute deck-building task into a few minutes. The AI runs as four bounded stages (classifier, explainer, relationship mapper, deck planner), works with Claude, OpenAI, or a free local model through Ollama, and never writes the file itself.',
+        'Its biggest lesson: reviewer edits are enforced in code, not just requested in a prompt, because a prompt is a request, not a guarantee.'],
+    s: [['Cheil Delta case study', 'work/cheil-delta.html'], ['Demo video', 'https://www.youtube.com/watch?v=36q8zA4btEg']],
+    f: ['How did Cheil Delta come to life?', 'What was the biggest challenge in Cheil Delta?', 'What did Dominic do at Cheil USA?'] },
+
   { id: 'lifeunfolded', ent: true, proj: 'Cheil USA (Samsung)', k: ['life unfolded', 'simulator', 'lifestyle simulator', 'celestials', 'cadence', 'alex', 'bea'],
     a: ['Life Unfolded is the app concept at the center of the Cheil “Choose Your Galaxy” campaign: a lifestyle simulator where people chat with three characters (Cadence, Alex, and Bea), each one a Galaxy foldable, and try everyday scenarios powered by Galaxy AI.',
         'A free demo runs on any phone; the full game and rewards unlock only on Galaxy Z devices.'],
@@ -134,7 +141,7 @@ window.ASK_KB = [
 
   { id: 'projects', k: ['projects', 'project', 'portfolio', 'case studies', 'case study', 'show me', 'your work', 'his work', 'best work', 'favorite project', 'collection', 'collections', 'switch', 'dark mode', 'light mode', 'ux vs branding', 'ux or branding', 'ux and branding', 'branding and ux', 'difference between', '"two collections"'],
     a: ['The work is split into two collections; the switch on the home page flips between them (UX Design shows in dark, Branding in light).',
-        '• UX Design: Providence Promise, Living Outside (in progress), Mr. Zeno, Head in the Clouds, Not Only for Bodega Cats',
+        '• UX Design: Providence Promise, Cheil Delta (an AI tool built at Cheil USA), Living Outside (in progress), Mr. Zeno, Head in the Clouds, Not Only for Bodega Cats',
         '• Branding: Cheil USA (Samsung), What Design Can’t Do (book design), Pocket Sauce, Moving [Type] Face, plus the identity side of Head in the Clouds and the posters and packaging from Bodega Cats'],
     s: [['UX Design work', 'index.html?view=ux'], ['Branding work', 'index.html?view=branding']],
     f: ['Summarize Providence Promise', 'Summarize What Design Can’t Do', 'Which projects use 3D?'] },
@@ -217,7 +224,7 @@ window.ASK_KB = [
 
   { id: 'ai', k: ['ai', 'artificial intelligence', 'agent', 'research assistant', 'philosophy', 'podcast'],
     a: ['Two AI-related items on the resume:',
-        '• At Cheil USA, Dominic built an AI agent on Samsung’s brand system that cut deck production from 45 to 10 minutes.',
+        '• At Cheil USA, Dominic built Cheil Delta, an AI tool that compares two versions of a file, explains each change, and builds the review deck after a person confirms it, cutting a 45-minute task to a few minutes.',
         '• As an AI Philosophy Research Assistant (Jun – Sept 2025), Dominic studied how an AI-generated podcast tool represents speaker identity.'],
     s: [['Resume (PDF)', 'Dominic-Park-Resume.pdf']], f: ['What did Dominic do at Cheil USA?'] },
 

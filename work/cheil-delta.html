@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en" data-fixed="ux">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cheil Delta — Dominic Park</title>
+  <meta name="description" content="Cheil Delta: an internal AI tool that compares two versions of a creative file, explains every change, and builds the review deck after a human confirms it, turning a 45-minute task into a few minutes.">
+  <script>/* Collection → theme, set before paint: UX Design = dark, Branding = light. */
+  !function(h){var f=h.getAttribute('data-fixed'),p=null,s=null;try{p=new URLSearchParams(location.search).get('view')}catch(e){}if(p!=='ux'&&p!=='branding')p=null;try{s=localStorage.getItem('dp-view')}catch(e){}var v=f||p||s||'ux';try{localStorage.setItem('dp-view',v)}catch(e){}h.setAttribute('data-view',v);h.setAttribute('data-theme',v==='ux'?'dark':'light');var m=document.querySelector('meta[name=theme-color]')||document.head.appendChild(document.createElement('meta'));m.name='theme-color';m.content=v==='ux'?'#0d0d10':'#ffffff'}(document.documentElement)</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=21">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="link" href="../index.html">Dominic Park</a>
+      <p class="site-header__center">[Product Design, AI Tooling, Workflow]</p>
+      <nav class="site-header__right" aria-label="Page">
+        <a class="link" href="../index.html"><span class="arrow arrow--l" aria-hidden="true">←</span> Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="cs-hero">
+      <h1 class="cs-hero__title reveal">Cheil Delta</h1>
+      <p class="cs-hero__lede reveal">An internal AI tool that turns a 45-minute task into a few minutes, so more time goes into design instead of deck-building.</p>
+      <div class="cs-hero__media reveal" style="background:transparent">
+        <div class="browser">
+          <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>Cheil Delta · Q3 Campaign, Round 2</span></div>
+          <img src="../assets/delta/review.webp" width="800" height="500" alt="Cheil Delta review screen: two detected changes, a text change with the old and new wording highlighted and an AI explanation marked confirm before trusting, and an image change with previous, new, and overlay views; each has Confirm, Edit explanation, Mark minor, and Reject buttons" style="width:100%;height:auto;display:block">
+        </div>
+      </div>
+    </section>
+
+    <dl class="facts reveal">
+      <div><dt>Role</dt><dd>Product design and development</dd></div>
+      <div><dt>Context</dt><dd>Cheil USA (Samsung), 2026</dd></div>
+      <div><dt>Team</dt><dd>Solo</dd></div>
+      <div><dt>Tools</dt><dd>Claude Code, Next.js, TypeScript, PostgreSQL; Claude, OpenAI, Ollama</dd></div>
+    </dl>
+
+    <nav class="toc" aria-label="On this page"><div class="toc__inner">
+      <a class="link" href="#problem">The problem</a>
+      <a class="link" href="#what">What it does</a>
+      <a class="link" href="#demo">See it in use</a>
+      <a class="link" href="#built">How it’s built</a>
+      <a class="link" href="#challenge">Challenge</a>
+      <a class="link" href="#usage">Real usage</a>
+      <a class="link" href="#results">Results</a>
+      <a class="link" href="#takeaway">Takeaway</a>
+    </div>
+    </nav>
+
+    <section class="chapter" id="problem" aria-labelledby="h-problem">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>01</span> The problem</p>
+        <h2 id="h-problem">The deck was necessary. It was never the valuable part.</h2>
+        <p>On fast-turnaround creative projects, every version change, even a small one, had to be explained to leadership or another department before it could move forward. Building that explanation into a presentable deck took about <strong>45 minutes every time</strong>: screenshotting both versions, spotting every difference by hand, writing it up, formatting slides.</p>
+        <p>Those 45 minutes came straight out of design time, on projects that were already tight on schedule.</p>
+      </div>
+      <div class="chapter__media">
+        <div class="bignum reveal">
+          <p class="bignum__n">45 min</p><p class="bignum__l">to build one comparison deck by hand</p>
+          <ol class="bignum__steps"><li>Screenshot both versions</li><li>Spot every difference manually</li><li>Write up each change</li><li>Format the slides</li></ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="what" aria-labelledby="h-what">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>02</span> What it does</p>
+        <h2 id="h-what">Two files in, a reviewed deck out.</h2>
+        <p>Cheil Delta compares two versions of a creative or marketing file (PDF, PNG, or JPEG), detects what changed with a deterministic diff engine, and uses an AI model to explain each change in plain language.</p>
+        <p>Then a person reviews every finding, confirming or correcting it, and only after that does the tool build a branded PowerPoint review deck. <strong>Nothing counts as approved until a human confirms it</strong>, and the AI never touches file generation; the deck is built by ordinary app code from the approved plan.</p>
+      </div>
+      <div class="chapter__media">
+        <div class="grid-2">
+          <figure class="reveal"><img class="frame" src="../assets/delta/new-comparison.webp" width="800" height="500" alt="New comparison form: a title, optional context for reviewers, and upload areas for the previous and new versions" loading="lazy" data-zoom><figcaption>1. Upload the previous and new versions.</figcaption></figure>
+          <figure class="reveal"><img class="frame" src="../assets/delta/progress.webp" width="800" height="500" alt="Comparison status with a progress bar reading Asking the AI to plan the presentation, the two files, and two confirmed changes" loading="lazy" data-zoom><figcaption>2. A real progress bar tracks each pipeline stage.</figcaption></figure>
+          <figure class="reveal"><img class="frame" src="../assets/delta/review.webp" width="800" height="500" alt="Review screen with AI-flagged changes and Confirm, Edit, Mark minor, and Reject controls" loading="lazy" data-zoom><figcaption>3. A person confirms, edits, or rejects every change.</figcaption></figure>
+          <figure class="reveal"><img class="frame" src="../assets/delta/deck-preview.webp" width="800" height="500" alt="Generated deck preview with a title slide and two slides summarizing the confirmed changes, and a Download .pptx button" loading="lazy" data-zoom><figcaption>4. The approved plan becomes a branded, versioned deck.</figcaption></figure>
+        </div>
+        <figure class="reveal"><img class="frame" src="../assets/delta/dashboard.webp" width="800" height="500" alt="Comparisons dashboard listing Q3 Campaign, Round 2 as Complete, with a New comparison button" loading="lazy" data-zoom><figcaption>Every comparison, and its status, at a glance.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="demo" aria-labelledby="h-demo">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>03</span> See it in use</p>
+        <h2 id="h-demo">The whole flow, start to finish.</h2>
+        <p>A recording of Cheil Delta comparing two versions of a file, walking through review, and generating the deck.</p>
+        <p><a class="link" href="https://www.youtube.com/watch?v=36q8zA4btEg" target="_blank" rel="noopener">Watch on YouTube <span class="arrow arrow--ne" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+      </div>
+      <div class="chapter__media">
+        <div class="video-embed reveal">
+          <iframe src="https://www.youtube-nocookie.com/embed/36q8zA4btEg?rel=0" title="Cheil Delta demo video" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="built" aria-labelledby="h-built">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>04</span> How it’s built</p>
+        <h2 id="h-built">Four small AI jobs, not one freeform agent.</h2>
+        <p>The pipeline runs in four bounded AI stages. Each one is called directly with pre-built, scoped context; the AI is never allowed to call arbitrary tools or take open-ended actions. Every stage’s output is checked against a strict schema before it’s trusted, with an automatic retry when it doesn’t fit.</p>
+        <p>The AI layer is provider-agnostic: the same interface runs on Claude, OpenAI, or a free local model through Ollama. A fallback mode chains providers and fails over to the next one if a call errors, so one API outage doesn’t stop the pipeline, and cost is capped per session so a runaway loop can’t run up a bill.</p>
+      </div>
+      <div class="chapter__media">
+        <ol class="pipeline reveal" aria-label="Cheil Delta pipeline">
+          <li><span class="pipeline__tag">Code</span><b>Diff engine</b> Renders both files and detects every text and image change, deterministically.</li>
+          <li><span class="pipeline__tag pipeline__tag--ai">AI 1</span><b>Classifier</b> Scores whether a detected change is meaningful.</li>
+          <li><span class="pipeline__tag pipeline__tag--ai">AI 2</span><b>Explainer</b> Writes a plain-language summary of what changed.</li>
+          <li><span class="pipeline__tag pipeline__tag--ai">AI 3</span><b>Relationship mapper</b> Flags connections between multiple changes.</li>
+          <li><span class="pipeline__tag pipeline__tag--human">Person</span><b>Human review</b> Confirm, edit, reject, or mark minor, for every change.</li>
+          <li><span class="pipeline__tag pipeline__tag--ai">AI 4</span><b>Review-deck planner</b> Turns confirmed findings into a slide plan, only after sign-off.</li>
+          <li><span class="pipeline__tag">Code</span><b>Deck builder</b> Generates the .pptx from the approved plan; the AI never writes the file.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="chapter" id="challenge" aria-labelledby="h-challenge">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>05</span> Challenge</p>
+        <h2 id="h-challenge">A guarantee, not a hint.</h2>
+        <p>The biggest architectural decision in the project came from a bug I caught while using the tool myself.</p>
+      </div>
+      <div class="chapter__media">
+        <div class="challenge reveal">
+          <div><h3>The hurdle</h3><p>When I edited an AI-flagged finding during review, the edit wasn’t reliably making it into the final deck. The first fix was to tell the AI more firmly, in the prompt, to keep edited text exactly. But a prompt is a request, not a guarantee, and a smaller or local model won’t always follow it.</p></div>
+          <div><h3>How I got past it</h3><p>I moved the rule out of the prompt and into the code: reviewer edits are now enforced deterministically after the AI runs. The same principle went everywhere it mattered. A slide’s header is derived from the same fact as its body so the two can’t drift apart, internal database IDs are stripped from AI output before anyone sees them, and AI summaries are capped and cleaned instead of trusted to stay short.</p></div>
+          <div><h3>What it taught me</h3><p>If something has to be true, the system should make it true. The AI can suggest; the code decides.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="usage" aria-labelledby="h-usage">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>06</span> Built through real usage</p>
+        <h2 id="h-usage">Most of the fixes came from using it, not from a spec sheet.</h2>
+        <p>Almost every meaningful improvement started with a real problem I hit while using the tool, traced back to its actual cause instead of papered over.</p>
+      </div>
+      <div class="chapter__media">
+        <ul class="fixes reveal">
+          <li><b>Stretched images in decks</b><span>Traced to a real bug in the presentation library, and fixed there rather than worked around.</span></li>
+          <li><b>Long, garbled AI summaries</b><span>The model was faithfully quoting corrupted source text; summaries now paraphrase around it and are capped.</span></li>
+          <li><b>A “processing” label that looked frozen</b><span>Replaced with a percentage progress bar tied to the actual pipeline stages.</span></li>
+          <li><b>Regenerating a deck overwrote the last one</b><span>Replaced with full version history, so nothing gets lost.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="results" aria-labelledby="h-results">
+      <div class="chapter__text reveal">
+        <p class="chapter__label"><span>07</span> Results</p>
+        <h2 id="h-results">From 45 minutes to a few.</h2>
+        <p>A leadership-ready comparison deck now takes a few minutes instead of about 45, and the time goes back into design.</p>
+      </div>
+      <div class="chapter__media">
+        <ul class="fixes reveal">
+          <li><b>45 minutes → a few minutes</b><span>Time to build a leadership-ready comparison deck.</span></li>
+          <li><b>Zero-cost testing</b><span>A free local model (Ollama) let me iterate and load-test with no API cost, which surfaced real gaps: truncated output, out-of-range confidence scores, inconsistent image descriptions. Each became a concrete fix.</span></li>
+          <li><b>Contained changes, not rewrites</b><span>Because the AI layer is provider-agnostic, adding vision support, deck versioning, and provider failover were each small, contained changes.</span></li>
+          <li><b>Demo-ready for free</b><span>A second, serverless deployment path with a scheduled job as a safety net lets the project be deployed and demoed without a payment method anywhere.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="takeaway" id="takeaway" aria-labelledby="h-take"><div class="takeaway__inner">
+      <p class="chapter__label"><span>08</span> Takeaway</p>
+      <h2 id="h-take" class="reveal">Where it succeeds: design time goes back to design.</h2>
+      <p class="reveal">Cheil Delta is a UX project whose user is the design team itself. The goal was never to automate judgment; it was to remove the busywork around it, while keeping a person in charge of every decision that reaches leadership.</p>
+      <div class="impact">
+        <div class="reveal"><h3>Built with</h3><p>Claude Code, Next.js, TypeScript, PostgreSQL, and a pluggable AI layer for Claude, OpenAI, and local models via Ollama.</p></div>
+        <div class="reveal"><h3>Design principle</h3><p>Human confirmation before anything ships, and code, not prompts, for anything that must be true.</p></div>
+        <div class="reveal"><h3>More</h3><p><a class="link" href="https://www.youtube.com/watch?v=36q8zA4btEg" target="_blank" rel="noopener">Demo video<span class="sr-only"> (opens in a new tab)</span></a> · <a class="link" href="https://www.figma.com/design/r1MkB53ffp0TWjEf502TjS/Cheil-Agent" target="_blank" rel="noopener">Figma case study<span class="sr-only"> (opens in a new tab)</span></a></p></div>
+      </div>
+    </div>
+    </section>
+
+    <nav class="pager" aria-label="Project navigation">
+      <a href="providence-promise.html"><small>Previous</small><span class="arrow arrow--l" aria-hidden="true">←</span> Providence Promise</a>
+      <a class="pager__next" href="living-outside.html"><small>Next</small>Living Outside <span class="arrow arrow--r" aria-hidden="true">→</span></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+    <span>© <span data-year>2026</span> Dominic Park</span>
+    <nav aria-label="Contact">
+      <a class="link" href="mailto:dominic.park.j@gmail.com">Gmail</a>
+      <a class="link" href="https://www.linkedin.com/in/dominic-park-b2a814282/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="link" href="../Dominic-Park-Resume.pdf" target="_blank" rel="noopener">Resume<span class="sr-only"> (PDF, opens in a new tab)</span></a>
+    </nav>
+    </div>
+  </footer>
+  <script src="../js/main.js?v=21"></script>
+  <script src="../js/assistant-kb.js?v=21"></script>
+  <script src="../js/assistant-index.js?v=21"></script>
+  <script src="../js/assistant.js?v=21"></script>
+</body>
+</html>

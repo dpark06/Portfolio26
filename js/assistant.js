@@ -16,10 +16,11 @@
                   'What did Dominic do at Cheil USA?', 'Which projects include usability testing?', 'How do I contact Dominic?'];
 
   // ---------- text helpers ----------
-  var STOP = 'a an the and or of to in on for with at by from is are was were be been do does did has have had i me my you your it its this that what which who whom how why when where can could would should will about tell show give list please dominic dominics s his her their them they he she many much people any also just some there here get go going want know into went were used use using happen happened like'.split(' ');
+  var STOP = 'a an the and or of to in on for with at by from is are was were be been do does did has have had i me my you your it its this that what which who whom how why when where can could would should will about tell show give list please dominic dominics s his her their them they he she many much people any also just some there here get go going want know into went were used use using happen happened like biggest main'.split(' ');
   function norm(s) { return (' ' + s.toLowerCase().replace(/[’']/g, "'").replace(/[^a-z0-9#.+' ]+/g, ' ').replace(/\s+/g, ' ') + ' ').replace(/\.+ /g, ' '); }
   function stem(w) { return w.replace(/'s$/, '').replace(/(ing|ed|es|s)$/, '').replace(/[.']/g, ''); }
-  function tokens(s) { return norm(s).trim().split(' ').filter(function (w) { return w && STOP.indexOf(w) < 0; }).map(stem).filter(function (w) { return w && STOP.indexOf(w) < 0; }); }
+  var SYN = { hurdle: 'challenge', obstacle: 'challenge', hardest: 'challenge', difficult: 'challenge', difficulty: 'challenge', struggle: 'challenge', struggl: 'challenge', challeng: 'challenge' };
+  function tokens(s) { return norm(s).trim().split(' ').filter(function (w) { return w && STOP.indexOf(w) < 0; }).map(stem).map(function (w) { return SYN[w] || w; }).filter(function (w) { return w && STOP.indexOf(w) < 0; }); }
   function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function href(p) { return /^(https?:|mailto:)/.test(p) ? p : ROOT + p; }
 
@@ -84,8 +85,8 @@
   // project page shows up here as soon as the index is rebuilt; nothing is hard-coded per project.
   var TOPICS = [
     { k: ['3d', 'three d', 'blender', 'cinema 4d', 'c4d', 'spline', 'modeling', 'modelling', 'render', 'rendering'], label: '3D', lead: 'use 3D', terms: ['3d', 'blender', 'cinema 4d', 'c4d', 'spline'] },
-    { k: ['code', 'coding', 'coded', 'html', 'css', 'javascript', 'js', 'develop', 'built a website'], label: 'code', lead: 'involve code', terms: ['html', 'css', 'js', 'github'] },
-    { k: ['ai', 'generative'], label: 'AI', lead: 'use AI', terms: ['generative ai', ' ai'] },
+    { k: ['code', 'coding', 'coded', 'html', 'css', 'javascript', 'js', 'develop', 'built a website'], label: 'code', lead: 'involve code', terms: ['html', 'css', 'js', 'github', 'next.js', 'typescript', 'claude code'] },
+    { k: ['ai', 'generative'], label: 'AI', lead: 'use AI', terms: ['generative ai', ' ai', 'claude', 'openai', 'ollama'] },
     { k: ['packaging', 'package', 'box'], label: 'packaging', lead: 'include packaging', terms: ['packaging'] },
     { k: ['research', 'user research'], label: 'research', lead: 'involve research', terms: ['research'] },
     { k: ['brand', 'branding', 'identity', 'rebrand'], label: 'branding', lead: 'involve branding or art direction', terms: ['identity', 'brand', 'art direction'] },

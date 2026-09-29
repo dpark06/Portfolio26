@@ -847,3 +847,40 @@ html[data-view="branding"] .view-switch__thumb { transform: translateX(100%); }
 .plain-list li { margin-bottom: .5em; }
 .plain-list strong { color: var(--ink); font-weight: 500; }
 html[data-theme="dark"] .ask-fab__label { color: var(--paper); }
+
+/* Challenge: the biggest hurdle in a UX project */
+.challenge { display: grid; gap: 0; border: 1px solid var(--rule); border-radius: var(--radius-lg); overflow: hidden; background: var(--wash); }
+.challenge > div { padding: clamp(18px, 2.4vw, 28px); border-top: 1px solid var(--rule); }
+.challenge > div:first-child { border-top: 0; }
+.challenge h3 { font-size: 12.5px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
+.challenge p { color: var(--ink-2); max-width: 62ch; }
+.challenge > div:last-child p { color: var(--ink); font-weight: 500; }
+
+/* Cheil Delta */
+.bignum { border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: clamp(22px, 3vw, 40px); background: var(--wash); }
+.bignum__n { font-size: clamp(56px, 8vw, 112px); line-height: 1; letter-spacing: -0.04em; font-weight: 500; margin: 0 0 6px; }
+.bignum__l { color: var(--ink-2); margin-bottom: 20px; }
+.bignum__steps { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; counter-reset: s; }
+.bignum__steps li { counter-increment: s; font-size: 14.5px; color: var(--ink-2); border-top: 1px solid var(--rule); padding-top: 10px; }
+.bignum__steps li::before { content: counter(s, decimal-leading-zero) "  "; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.pipeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.pipeline li { position: relative; display: grid; grid-template-columns: 76px 1fr; column-gap: 16px; align-items: baseline; padding: 14px 18px; border: 1px solid var(--rule); border-radius: var(--radius-lg); color: var(--ink-2); font-size: 15px; }
+.pipeline li b { color: var(--ink); font-weight: 500; margin-right: 6px; }
+.pipeline li + li::before { content: ""; position: absolute; left: 55px; top: -11px; width: 1px; height: 10px; background: var(--rule); }
+.pipeline__tag { grid-row: span 2; justify-self: start; font-size: 11.5px; font-weight: 500; letter-spacing: .04em; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--rule); color: var(--ink-3); }
+.pipeline__tag--ai { color: #6d5cf5; border-color: rgba(109,92,245,.4); }
+.pipeline__tag--human { color: var(--paper); background: var(--ink); border-color: var(--ink); }
+html[data-theme="dark"] .pipeline__tag--ai { color: #b3a8ff; border-color: rgba(179,168,255,.45); }
+.fixes { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--rule); }
+.fixes li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: var(--gap); padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.fixes b { font-weight: 500; }
+.fixes span { color: var(--ink-2); }
+.video-embed { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius-lg); overflow: hidden; background: #000; }
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 699px) {
+  .fixes li { grid-template-columns: 1fr; gap: 4px; }
+  .bignum__steps { grid-template-columns: 1fr; }
+  .pipeline li { grid-template-columns: 1fr; row-gap: 6px; }
+  .pipeline__tag { grid-row: auto; }
+  .pipeline li + li::before { left: 28px; }
+}

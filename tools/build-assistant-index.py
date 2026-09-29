@@ -36,6 +36,7 @@ for f, proj in pages.items():
         lab = re.search(r'class="chapter__label"><span>\d+</span>\s*(.*?)</p>', body, re.S)
         paras = [clean(p) for p in re.findall(r'<p(?: class="(?:reveal|aside-note reveal)")?>(.*?)</p>', body, re.S)]
         paras = [p for p in paras if len(p) > 40]
+        if sid == 'challenge' and len(paras) > 1: paras = paras[1:]   # skip the generic intro line
         li = [clean(x) for x in re.findall(r'<li>(.*?)</li>', body, re.S)][:8]
         out.append({'p': proj, 't': clean(lab.group(1)) if lab else '', 'hd': clean(h2.group(1)) if h2 else '',
                     'h': f'{f}#{sid}', 'x': ' '.join(paras)[:1400], 'l': li})
