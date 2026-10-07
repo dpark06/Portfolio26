@@ -208,7 +208,7 @@ window.ASK_KB = [
   { id: 'web', k: ['website', 'web', 'site', 'web design', 'landing page', 'html'],
     a: ['Web work includes:',
         '• Not Only for Bodega Cats: a live, interactive site (published on GitHub Pages).',
-        '• Head in the Clouds: a four-page festival site designed for desktop and mobile.',
+        '• Head in the Clouds: a festival site (Home, Lineup, Passes, Merch, Info) designed for desktop.',
         '• Living Outside: a nonprofit site redesign, in progress.',
         '• The College Hill Independent: weekly web layouts and publishing (resume).'],
     s: [['Bodega Cats', 'work/bodega-cats.html'], ['Head in the Clouds', 'work/head-in-the-clouds.html#site'], ['Living Outside', 'work/living-outside.html']],
