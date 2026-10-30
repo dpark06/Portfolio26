@@ -244,6 +244,20 @@
   fab.type = 'button'; fab.className = 'ask-fab'; fab.setAttribute('aria-label', 'Ask about Dominic (press /)');
   fab.innerHTML = orb('ask-orb--fab') + '<span class="ask-fab__label" aria-hidden="true">Ask about Dominic <kbd>/</kbd></span>';
   document.body.appendChild(fab);
+  // Keep the blob above the footer line so it never sits on top of Gmail / LinkedIn / Resume.
+  var footer = document.querySelector('.site-footer'), liftQueued = false;
+  function lift() {
+    liftQueued = false;
+    var over = footer ? Math.max(0, window.innerHeight - footer.getBoundingClientRect().top) : 0;
+    fab.style.setProperty('--ask-footer', over + 'px');
+  }
+  function queueLift() { if (!liftQueued) { liftQueued = true; requestAnimationFrame(lift); } }
+  if (footer) {
+    window.addEventListener('scroll', queueLift, { passive: true });
+    window.addEventListener('resize', queueLift);
+    window.addEventListener('load', queueLift);
+    lift();
+  }
 
   // hero bar on the home page
   var heroMount = document.getElementById('ask-hero');
