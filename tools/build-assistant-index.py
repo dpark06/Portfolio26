@@ -15,7 +15,7 @@ def clean(s):
 pages = {'work/providence-promise.html': 'Providence Promise', 'work/bodega-cats.html': 'Not Only for Bodega Cats',
          'work/mr-zeno.html': 'Mr. Zeno', 'work/head-in-the-clouds.html': 'Head in the Clouds',
          'work/cheil.html': 'Cheil USA (Samsung)', 'work/moving-type-face.html': 'Moving [Type] Face',
-         'work/living-outside.html': 'Living Outside', 'work/pocket-sauce.html': 'Pocket Sauce'}
+         'work/pocket-sauce.html': 'Pocket Sauce'}
 for f in sorted(glob.glob('work/*.html')):
     if f not in pages:
         t = re.search(r'<title>(.*?)</title>', open(f).read(), re.S)

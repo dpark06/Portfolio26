@@ -126,9 +126,8 @@ window.ASK_KB = [
     a: ['Research shows up across several projects:',
         '• Providence Promise: parent interviews (36 quotes, affinity-mapped), personas, competitive analysis, and usability testing.',
         '• Head in the Clouds: festival coverage, attendee reviews, and Reddit threads mapped into fan pain points.',
-        '• Living Outside: co-founder interviews, an audience map, and six personas.',
         '• Cheil USA: an audience survey on phone brands and what would make people switch.'],
-    s: [['Providence Promise', 'work/providence-promise.html#research'], ['Head in the Clouds', 'work/head-in-the-clouds.html#research'], ['Living Outside', 'work/living-outside.html#research']],
+    s: [['Providence Promise', 'work/providence-promise.html#research'], ['Head in the Clouds', 'work/head-in-the-clouds.html#research']],
     f: ['What changed after usability testing?', 'Which tools does Dominic use?'] },
 
   { id: 'tools', k: ['tools', 'tool', 'software', 'skills', 'skill', 'figma', 'adobe', 'photoshop', 'illustrator', 'indesign', 'cinema', 'c4d', 'blender', 'spline', 'procreate', 'code', 'coding', 'html', 'claude', 'programs'],
@@ -149,7 +148,7 @@ window.ASK_KB = [
 
   { id: 'projects', k: ['projects', 'project', 'portfolio', 'case studies', 'case study', 'show me', 'your work', 'his work', 'best work', 'favorite project', 'collection', 'collections', 'switch', 'dark mode', 'light mode', 'ux vs branding', 'ux or branding', 'ux and branding', 'branding and ux', 'difference between', '"two collections"'],
     a: ['The work is split into two collections; the switch on the home page flips between them (UX Design shows in dark, Branding in light).',
-        '• UX Design: Providence Promise, Cheil Delta (an AI tool built at Cheil USA), Living Outside (in progress), Mr. Zeno, Head in the Clouds, Not Only for Bodega Cats',
+        '• UX Design: Providence Promise, Cheil Delta (an AI tool built at Cheil USA), Mr. Zeno, Head in the Clouds, Not Only for Bodega Cats',
         '• Branding: Cheil USA (Samsung), What Design Can’t Do (book design), Pocket Sauce, Moving [Type] Face, plus the identity side of Head in the Clouds and the posters and packaging from Bodega Cats'],
     s: [['UX Design work', 'index.html?view=ux'], ['Branding work', 'index.html?view=branding']],
     f: ['Summarize Providence Promise', 'Summarize What Design Can’t Do', 'Which projects use 3D?'] },
@@ -179,11 +178,6 @@ window.ASK_KB = [
     a: ['Moving [Type] Face is a 1-week, self-initiated type project: a ruled blue typeface built on a grid, layered with a hand-drawn yellow typeface made of small characters, then extended into postcards and a specimen poster.'],
     s: [['Moving [Type] Face', 'work/moving-type-face.html']], f: ['Show me the projects'] },
 
-  { id: 'lo', ent: true, proj: 'Living Outside', k: ['living outside', 'nonprofit', 'homelessness', 'care bag', 'care bags', 'volunteer', 'sitemap', 'navigation'],
-    a: ['Living Outside is an in-progress website redesign (Jul 2026 – present) for a youth-led nonprofit working to destigmatize homelessness.',
-        'The old site hid information several clicks deep; the redesign flattens the sitemap so each audience reaches its goal in one or two clicks, with a new, contrast-checked brand.'],
-    s: [['Living Outside case study', 'work/living-outside.html']], f: ['What UX research has Dominic done?'] },
-
   { id: 'sauce', ent: true, proj: 'Pocket Sauce', k: ['pocket sauce', 'sauce', 'sauces', 'packaging', 'packet', 'packets'],
     a: ['Pocket Sauce is a 1.5-week personal brand: Dominic doesn’t eat anything without sauce, so the project turns favorite sauces into hand-drawn, portable packets (drawn in Procreate), a gift box, food-truck ads, and a photo campaign.',
         'The case study even lets you build your own box of five.'],
@@ -192,9 +186,8 @@ window.ASK_KB = [
   { id: 'access', k: ['accessibility', 'accessible', 'contrast', 'wcag', 'inclusive', 'a11y', 'bilingual', 'spanish', 'language'],
     a: ['Accessibility comes up across the work:',
         '• Head in the Clouds: pastel text that failed contrast was moved to deep teal on cream (about 5.3:1).',
-        '• Providence Promise: an English/Español toggle and a short sign-up for parents who aren’t tech-savvy.',
-        '• Living Outside: the original palette was scrapped for failing contrast checks.'],
-    s: [['Head in the Clouds', 'work/head-in-the-clouds.html#access'], ['Living Outside', 'work/living-outside.html#brand']],
+        '• Providence Promise: an English/Español toggle and a short sign-up for parents who aren’t tech-savvy.'],
+    s: [['Head in the Clouds', 'work/head-in-the-clouds.html#access']],
     f: ['What UX research has Dominic done?'] },
 
   { id: 'mobile', k: ['app', 'apps', 'mobile', 'ios', 'phone', 'screens', 'ui', 'interface'],
@@ -209,9 +202,8 @@ window.ASK_KB = [
     a: ['Web work includes:',
         '• Not Only for Bodega Cats: a live, interactive site (published on GitHub Pages).',
         '• Head in the Clouds: a festival site (Home, Lineup, Passes, Merch, Info) designed for desktop.',
-        '• Living Outside: a nonprofit site redesign, in progress.',
         '• The College Hill Independent: weekly web layouts and publishing (resume).'],
-    s: [['Bodega Cats', 'work/bodega-cats.html'], ['Head in the Clouds', 'work/head-in-the-clouds.html#site'], ['Living Outside', 'work/living-outside.html']],
+    s: [['Bodega Cats', 'work/bodega-cats.html'], ['Head in the Clouds', 'work/head-in-the-clouds.html#site']],
     f: ['Does Dominic design for accessibility?'] },
 
   { id: 'brand', k: ['brand', 'branding', 'identity', 'logo', 'visual identity', 'graphic design'],
@@ -248,8 +240,8 @@ window.ASK_KB = [
 
   { id: 'strengths', k: ['best', 'good at', 'strength', 'strengths', 'strongest', 'excel', 'excels', 'abilities', 'ability', 'skilled', 'talent', 'why hire', 'fit', 'bring to', 'stand out', 'teamwork', 'collaborate', 'collaboration', 'working with others', 'work with others', 'team player'],
     a: ['What Dominic does best is user research: listening to people, finding where an experience breaks for them, and turning that into a design that feels obvious to use.',
-        '• Research: 36 parent quotes affinity-mapped for Providence Promise; festival reviews and Reddit threads mapped into fan pain points for Head in the Clouds; co-founder interviews and six personas for Living Outside.',
-        '• Working with others: a six-designer Design for America team sharing one design system, a four-intern team at Cheil USA where he art directed two client-approved concepts, and three volunteer designers at Living Outside.',
+        '• Research: 36 parent quotes affinity-mapped for Providence Promise; festival reviews and Reddit threads mapped into fan pain points for Head in the Clouds.',
+        '• Working with others: a six-designer Design for America team sharing one design system and a four-intern team at Cheil USA where he art directed two client-approved concepts.',
         '• Craft: a graphic design background (RISD, 3.95 GPA) that carries the research into clear interfaces, brands, and visuals.'],
     s: [['Providence Promise: research', 'work/providence-promise.html#research'], ['Cheil USA', 'work/cheil.html'], ['About', 'about.html']],
     f: ['What is Dominic’s design process?', 'Which projects were team projects?', 'Why does Dominic like to design?'] },
