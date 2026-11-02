@@ -902,3 +902,5 @@ html[data-theme="dark"] .pipeline__tag--ai { color: #b3a8ff; border-color: rgba(
 .tester__size input { height: 24px; }
 .site-footer a.link { display: inline-flex; align-items: center; min-width: 44px; }
 .takeaway .impact p > .link:only-child { display: inline-flex; align-items: center; min-height: 44px; }
+/* App screens exported with transparent corners: no tile, outline, or rounding behind them */
+.frame--bare, html[data-theme="dark"] .frame--bare { background: transparent; box-shadow: none; border-radius: 0; }
